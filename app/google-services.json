@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "889301342011",
+    "firebase_url": "https://csci3130-project-group4.firebaseio.com",
+    "project_id": "csci3130-project-group4",
+    "storage_bucket": "csci3130-project-group4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889301342011:android:6e852b97af180048",
+        "android_client_info": {
+          "package_name": "comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889301342011-93tu8rsmhvgcgdfrpit7ds1in1hrgi3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKFNHFhZvmJloFOUVDsQDRN8-emHH774M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
