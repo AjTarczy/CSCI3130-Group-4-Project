@@ -68,9 +68,17 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/button"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="47dp"
+            android:layout_marginTop="52dp"
             android:src="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_alignEnd="@+id/button3"
+            android:layout_alignTop="@+id/imageView"
+            android:text="TextView" />
 
     </RelativeLayout>
 
