@@ -45,25 +45,6 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class RegistrationActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
-    //class to store User data for entry into database
-    public static class User {
-
-        public String email;
-        public String password;
-        public String firstName;
-        public String lastName;
-        public String DoB;
-        public double height;
-        public double weight;
-        public String gender;
-
-
-        public User(String email, String password, String firstName, String lastName, String DoB, double height, double weight, String gender) {
-
-        }
-    }
-
-
 
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference usersRef = database.getReference("users");
@@ -134,21 +115,21 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
      */
     private void registerUser() {
 
-        /* Store values at the time of the login attempt.
+        // Store values at the time of the login attempt.
         String username = mUsernameView.getText().toString();
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
         String firstName = mFirstNameView.getText().toString();
         String lastName = mLastNameView.getText().toString();
         String dob = mDoBView.getText().toString();
-        String height = mHeightView.getText().toString();
-        String weight = mWeightView.getText().toString();
-        String gender = mGenderView.getSelectedItem().toString();*/
+        double height = Double.parseDouble(mHeightView.getText().toString());
+        double weight = Double.parseDouble(mWeightView.getText().toString());
+        String gender = mGenderView.getSelectedItem().toString();
 
 
 
 
-       // User newUser = new User(email, password, firstName, lastName, dob, height, weight, gender);
+        User newUser = new User(email, password, firstName, lastName, dob, height, weight, gender);
 
       //  User newUser = new User("test@test.com", "test", "first", "last", "1988/03/15", 172, 75, "Male");
 
@@ -159,7 +140,7 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
         //usersRef.setValue(users);
 
         //NOTE: Trying to figure out why this doesn't add data correctly to the database
-        usersRef.child("rob").setValue(new User("test@test.com", "password", "First", "Last", "1988/03/15", 172, 75, "Male"));
+        usersRef.child(username).setValue(newUser);
 
 
 
