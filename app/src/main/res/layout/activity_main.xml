@@ -69,8 +69,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/button"
             android:layout_marginTop="52dp"
@@ -78,8 +78,8 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:layout_alignBottom="@+id/imageView"
             android:layout_alignEnd="@+id/button3"
             android:layout_alignTop="@+id/imageView"
