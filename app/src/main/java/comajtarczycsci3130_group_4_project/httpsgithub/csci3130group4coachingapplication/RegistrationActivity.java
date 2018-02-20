@@ -95,24 +95,9 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
         });
 
         mRegistrationFormView = findViewById(R.id.registration_form);
-
-
-
-
         mProgressView = findViewById(R.id.login_progress);
     }
 
-
-
-
-
-
-
-    /**
-     * Attempts to sign in or register the account specified by the login form.
-     * If there are form errors (invalid email, missing fields, etc.), the
-     * errors are presented and no actual login attempt is made.
-     */
     private void registerUser() {
 
         // Store values at the time of the login attempt.
@@ -127,29 +112,10 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
         String gender = mGenderView.getSelectedItem().toString();
 
 
-
-
         User newUser = new User(email, password, firstName, lastName, dob, height, weight, gender);
-
-      //  User newUser = new User("test@test.com", "test", "first", "last", "1988/03/15", 172, 75, "Male");
-
-
-        //Map<String, User> users = new HashMap<>();
-        //users.put(username, newUser);
-
-        //usersRef.setValue(users);
-
-        //NOTE: Trying to figure out why this doesn't add data correctly to the database
         usersRef.child(username).setValue(newUser);
 
-
-
-
     }
-
-
-
-
 
 
     @Override
