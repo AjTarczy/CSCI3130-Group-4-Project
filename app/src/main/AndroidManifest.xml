@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".editProfile" />
+        <activity android:name=".plans" />
+        <activity android:name=".Statistics" />
+        <activity android:name=".manageCoach"></activity>
     </application>
 
 </manifest>

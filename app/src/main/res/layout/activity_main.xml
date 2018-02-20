@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.lizzie.csci3130groupproject.MainActivity">
+    tools:context="comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication.MainActivity">
 
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -14,7 +14,8 @@
         android:layout_height="match_parent"
         tools:context="com.example.lizzie.csci3130groupproject.MainActivity"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="16dp">
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints">
 
         <Button
             android:id="@+id/button"
@@ -26,7 +27,8 @@
             android:layout_marginLeft="32dp"
             android:layout_marginStart="32dp"
             android:background="@drawable/button_one"
-            android:text="Edit Profile" />
+            android:text="Edit Profile"
+            android:onClick="editProfile" />
 
         <Button
             android:id="@+id/button2"
@@ -37,7 +39,8 @@
             android:layout_alignStart="@+id/button"
             android:layout_marginBottom="32dp"
             android:background="@drawable/button_two"
-            android:text="Plans" />
+            android:text="Plans"
+            android:onClick="Plans" />
 
         <Button
             android:id="@+id/button3"
@@ -49,7 +52,8 @@
             android:layout_toEndOf="@+id/button2"
             android:layout_toRightOf="@+id/button2"
             android:background="@drawable/button_three"
-            android:text="Manage Coach" />
+            android:text="Manage Coach"
+            android:onClick="manageCoach" />
 
         <Button
             android:id="@+id/button4"
@@ -60,7 +64,8 @@
             android:layout_alignLeft="@+id/button3"
             android:layout_alignStart="@+id/button3"
             android:background="@drawable/button_four"
-            android:text="Statistics" />
+            android:text="Statistics"
+            android:onClick="statistics" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -78,6 +83,8 @@
             android:layout_alignBottom="@+id/imageView"
             android:layout_alignEnd="@+id/button3"
             android:layout_alignTop="@+id/imageView"
+            android:layout_marginStart="21dp"
+            android:layout_toEndOf="@+id/imageView"
             android:text="TextView" />
 
     </RelativeLayout>
