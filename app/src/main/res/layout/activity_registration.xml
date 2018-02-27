@@ -126,6 +126,19 @@
                 android:background="@android:drawable/btn_dropdown"
                 android:spinnerMode="dropdown"/>
 
+
+            <Switch
+                android:id="@+id/role_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:showText="true"
+                android:checked="true"
+                android:gravity="left"
+                android:splitTrack="true"
+                android:text="User Role"
+                android:textOff="Athlete"
+                android:textOn="Coach"/>
+
             <Button
                 android:id="@+id/register_button"
                 style="?android:textAppearanceSmall"

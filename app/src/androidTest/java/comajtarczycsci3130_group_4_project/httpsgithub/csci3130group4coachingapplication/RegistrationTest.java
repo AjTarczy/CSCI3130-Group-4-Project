@@ -118,13 +118,31 @@ public class RegistrationTest
 
         ViewActions.closeSoftKeyboard();
 
-
-
         onView(withId(R.id.gender_input)).perform(click());
 
         onData(allOf(is(instanceOf(String.class)), is(test))).perform(click());
 
         onView(withId(R.id.gender_input)).check(matches(withSpinnerText(containsString(test))));
+
+    }
+
+    @Test
+    public void testRole()
+    {
+        test = "Athlete";
+
+        ViewActions.closeSoftKeyboard();
+
+        onView(withId(R.id.role_switch)).check(matches(withText(test)));
+
+        test = "Coach";
+
+        onView(withId(R.id.role_switch)).perform(click());
+
+        onView(withId(R.id.role_switch)).check(matches(withText(test)));
+
+
+
 
     }
 

@@ -28,6 +28,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
@@ -61,7 +62,9 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
     private EditText mHeightView;
     private EditText mWeightView;
     private Spinner mGenderView;
-    private static final String[] listItems = {"Male", "Female", "Prefer not to specify"};
+    private Switch mRoleView;
+    private static final String[] genderListItems = {"Male", "Female", "Prefer not to specify"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,13 +81,14 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
         mHeightView = (EditText) findViewById(R.id.height_input);
         mWeightView = (EditText) findViewById(R.id.weight_input);
         mGenderView = (Spinner) findViewById(R.id.gender_input);
+        mRoleView = (Switch) findViewById(R.id.role_switch);
         mPasswordView = (EditText) findViewById(R.id.password);
 
-        ArrayAdapter<String>adapter = new ArrayAdapter<String>(RegistrationActivity.this,
-                android.R.layout.simple_spinner_item,listItems);
+        ArrayAdapter<String> genderAdapter = new ArrayAdapter<String>(RegistrationActivity.this,
+                android.R.layout.simple_spinner_item, genderListItems);
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mGenderView.setAdapter(adapter);
+        genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mGenderView.setAdapter(genderAdapter);
 
         Button mRegisterButton = findViewById(R.id.register_button);
         mRegisterButton.setOnClickListener(new OnClickListener() {
@@ -110,9 +114,20 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
         double height = Double.parseDouble(mHeightView.getText().toString());
         double weight = Double.parseDouble(mWeightView.getText().toString());
         String gender = mGenderView.getSelectedItem().toString();
+        String role;
+
+        if (mRoleView.isChecked())
+        {
+            role = mRoleView.getTextOn().toString();
+        }
+
+        else
+        {
+            role = mRoleView.getTextOff().toString();
+        }
 
 
-        User newUser = new User(email, password, firstName, lastName, dob, height, weight, gender);
+        User newUser = new User(email, password, firstName, lastName, dob, height, weight, gender, role);
         usersRef.child(username).setValue(newUser);
 
     }

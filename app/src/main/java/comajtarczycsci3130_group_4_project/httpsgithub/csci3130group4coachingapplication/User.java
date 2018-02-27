@@ -15,6 +15,7 @@ public class User {
     public double height;
     public double weight;
     public String gender;
+    public String role;
 
     public User()
     {
@@ -22,7 +23,7 @@ public class User {
     }
 
 
-    public User(String email, String password, String firstName, String lastName, String dob, double height, double weight, String gender)
+    public User(String email, String password, String firstName, String lastName, String dob, double height, double weight, String gender, String role)
     {
         this.email = email;
         this.password = password;
@@ -32,6 +33,7 @@ public class User {
         this.height = height;
         this.weight = weight;
         this.gender = gender;
+        this.role = role;
 
     }
 
@@ -75,6 +77,11 @@ public class User {
         return gender;
     }
 
+    public String getRole()
+    {
+        return role;
+    }
+
     public void setEmail(String email)
     {
         this.email = email;
@@ -113,5 +120,10 @@ public class User {
     public void setGender(String gender)
     {
         this.gender = gender;
+    }
+
+    public void setRole(String role)
+    {
+        this.role = role;
     }
 }
