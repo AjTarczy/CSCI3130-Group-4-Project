@@ -31,6 +31,7 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -42,7 +43,6 @@ import java.util.Map;
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
- * A login screen that offers login via email/password.
  */
 public class RegistrationActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
@@ -64,6 +64,7 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
     private Spinner mGenderView;
     private Switch mRoleView;
     private static final String[] genderListItems = {"Male", "Female", "Prefer not to specify"};
+
 
 
     @Override
@@ -91,7 +92,9 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
         mGenderView.setAdapter(genderAdapter);
 
         Button mRegisterButton = findViewById(R.id.register_button);
-        mRegisterButton.setOnClickListener(new OnClickListener() {
+
+        mRegisterButton.setOnClickListener(new OnClickListener()
+        {
             @Override
             public void onClick(View view) {
                 registerUser();
@@ -126,9 +129,30 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
             role = mRoleView.getTextOff().toString();
         }
 
+        //check if insertion is successful or not
+        DatabaseReference.CompletionListener insertListener = new DatabaseReference.CompletionListener()
+        {
+            @Override
+            public void onComplete(DatabaseError databaseError, DatabaseReference usersRef)
+            {
 
+                if (databaseError != null)
+                {
+                    //Failed insertion
+                }
+
+                else
+                {
+                    //Successful insertion, return to main activity
+                    finish();
+                }
+
+            }
+        };
+
+        //create user object, push into database
         User newUser = new User(email, password, firstName, lastName, dob, height, weight, gender, role);
-        usersRef.child(username).setValue(newUser);
+        usersRef.child(username).setValue(newUser, insertListener);
 
     }
 
