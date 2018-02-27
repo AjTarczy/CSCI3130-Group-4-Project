@@ -39,7 +39,7 @@
             android:layout_alignStart="@+id/button"
             android:layout_marginBottom="32dp"
             android:background="@drawable/button_two"
-            android:onClick="Plans"
+            android:onClick="plans"
             android:text="Plans" />
 
         <Button
