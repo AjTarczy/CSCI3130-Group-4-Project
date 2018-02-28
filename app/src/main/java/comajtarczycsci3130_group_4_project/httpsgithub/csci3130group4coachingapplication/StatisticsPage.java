@@ -6,7 +6,7 @@ package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingap
 
 public class StatisticsPage {
 
-    public static int getTotalDailyTasks(){ return 3;}
+    public static int getTotalDailyTasks(){ return 3}
     public static int getTotalWeeklyTasks(){ return 3;}
     public static int getTotalMonthlyTasks(){ return 3;}
     public static int getTotalAllTimeTasks(){ return 3;}
@@ -59,9 +59,9 @@ public class StatisticsPage {
     public static double getMonthlyTimeSpentRunning(){ return 3;}
     public static double getAllTimeTimeSpentRunning(){ return 3;}
 
-    public static double getDistanceRanYesterday(){return 1;}
-    public static double getDistanceRanLastWeek(){return 1;}
-    public static double getDistanceRanLastMonth(){return 1;}
+    public static double getDistanceRanYesterday(){return 3;}
+    public static double getDistanceRanLastWeek(){return 3;}
+    public static double getDistanceRanLastMonth(){return 3;}
 
     public static double
 }

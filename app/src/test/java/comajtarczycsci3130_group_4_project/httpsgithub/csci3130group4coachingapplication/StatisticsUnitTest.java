@@ -118,6 +118,24 @@ public class StatisticsUnitTest {
     public void allTimeTimeSpentRunning(){
         assertEquals(3.0, StatisticsPage.getAllTimeTimeSpentRunning(), 0);
     }
+
+
+    //tests for distance ran previously
+    //tests to check amount of time user spent running in minutes
+    @Test
+    public void distanceRanYesterday(){
+        assertEquals(3.0, StatisticsPage.getDistanceRanYesterday(), 0);
+    }
+    @Test
+    public void distanceRanLastWeek(){
+        assertEquals(3.0, StatisticsPage.getDistanceRanLastWeek(), 0);
+    }
+    @Test
+    public void distanceRanLastMonth(){
+        assertEquals(3.0, StatisticsPage.getDistanceRanLastMonth(), 0);
+    }
+
+
 /*
     @AfterClass
     public void removeUser(){}
