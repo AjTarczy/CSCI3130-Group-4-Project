@@ -16,30 +16,52 @@ public class StatisticsPage {
     public static int getCompletedMonthlyTasks(){ return 3;}
     public static int getCompletedAllTimeTasks(){ return 3;}
 
-    public static int getDailyCalsBurned(){ return 3;}
-    public static int getWeeklyCalsBurned(){ return 3;}
-    public static int getMonthlyCalsBurned(){ return 3;}
-    public static int getAllTimeCalsBurned(){ return 3;}
+    public static double getDailyCalsBurned(){ return 3;}
+    public static double getWeeklyCalsBurned(){ return 3;}
+    public static double getMonthlyCalsBurned(){ return 3;}
+    public static double getAllTimeCalsBurned(){ return 3;}
 
-    public static double calculateCalsBurned(String sex, int age, double weight, int time){
-        double ageConst=0, weightConst=0, heartRateConst=0, timeConst=0, constant=0;
+    public static double calculateCalsBurned(String lstrSex, int lintAge, double ldubWeight,
+                                             int lintTimeSpentExercising){
 
-        if(sex.equalsIgnoreCase("male")) {
-            ageConst = 0.2017;
-            weightConst = 0.09036;
-            heartRateConst = 120*0.6309;
-            timeConst = 4.184;
-            constant = 55.0969;
+        double ldubAgeConst=0, ldubWeightConst=0, ldubHeartRateConst=0,
+                ldubTimeSpentExercisingConst=0, ldubConstant=0;
+
+        if(lstrSex.equalsIgnoreCase("male")) {
+            ldubAgeConst = 0.2017;
+            ldubWeightConst = 0.09036;
+            ldubHeartRateConst = 120*0.6309;
+            ldubTimeSpentExercisingConst = 4.184;
+            ldubConstant = 55.0969;
         }
 
-        else if(sex.equalsIgnoreCase("female")){
-            ageConst = 0.074;
-            weightConst = 0.05741;
-            heartRateConst = 120*0.4472;
-            timeConst = 4.184;
-            constant = 20.4022;
+        else if(lstrSex.equalsIgnoreCase("female")){
+            ldubAgeConst = 0.074;
+            ldubWeightConst = 0.05741;
+            ldubHeartRateConst = 120*0.4472;
+            ldubTimeSpentExercisingConst = 4.184;
+            ldubConstant = 20.4022;
         }
 
-        double result = (age*ageConst + weight*weightConst + heartRateConst - constant)*(time/timeConst);
+        double result = (lintAge*ldubAgeConst + ldubWeight*ldubWeightConst + ldubHeartRateConst -
+                ldubConstant)*(lintTimeSpentExercising/ldubTimeSpentExercisingConst);
+
+        return result;
     }
+
+    public static double getDailyDistanceRan(){ return 3;}
+    public static double getWeeklyDistanceRan(){ return 3;}
+    public static double getMonthlyDistanceRan(){ return 3;}
+    public static double getAllTimeDistanceRan(){ return 3;}
+
+    public static double getDailyTimeSpentRunning(){ return 3;}
+    public static double getWeeklyTimeSpentRunning(){ return 3;}
+    public static double getMonthlyTimeSpentRunning(){ return 3;}
+    public static double getAllTimeTimeSpentRunning(){ return 3;}
+
+    public static double getDistanceRanYesterday(){return 1;}
+    public static double getDistanceRanLastWeek(){return 1;}
+    public static double getDistanceRanLastMonth(){return 1;}
+
+    public static double
 }
