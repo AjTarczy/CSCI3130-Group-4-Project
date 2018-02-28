@@ -47,6 +47,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 public class RegistrationActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
 
+    //create database reference
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference usersRef = database.getReference("users");
 
@@ -105,6 +106,7 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
         mProgressView = findViewById(R.id.login_progress);
     }
 
+    //pulls user data from fields, creates User object, pushes into the database
     private void registerUser() {
 
         // Store values at the time of the login attempt.
@@ -119,11 +121,13 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
         String gender = mGenderView.getSelectedItem().toString();
         String role;
 
+        //if role switch is in "on" position
         if (mRoleView.isChecked())
         {
             role = mRoleView.getTextOn().toString();
         }
 
+        //if role switch is in "off" position
         else
         {
             role = mRoleView.getTextOff().toString();

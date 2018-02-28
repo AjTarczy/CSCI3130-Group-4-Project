@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity
     private EditText mUsernameView;
     private EditText mPasswordView;
 
+    //create database reference
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference usersRef = database.getReference("users");
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity
 
         Button mLoginButton = findViewById(R.id.login_button);
 
+        //set event listener for login button press
         mLoginButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -39,6 +41,8 @@ public class MainActivity extends AppCompatActivity
                 mUsernameView = (EditText) findViewById(R.id.main_username_input);
                 mPasswordView = (EditText) findViewById(R.id.main_password);
 
+
+                //create database event listener to query database for user login info
                 usersRef.addListenerForSingleValueEvent(new ValueEventListener()
                 {
                     @Override
@@ -66,7 +70,7 @@ public class MainActivity extends AppCompatActivity
 
                             }
 
-                            //if user enters an unrecognized username, go to login page
+                            //if user enters an unrecognized username, go to registration page
                             else
                             {
                                 register();
