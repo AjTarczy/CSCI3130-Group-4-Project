@@ -1,8 +1,8 @@
 package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -25,16 +25,12 @@ public class MainActivity extends AppCompatActivity
     //create database reference
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference usersRef = database.getReference("users");
-=======
-
-public class MainActivity extends AppCompatActivity {
->>>>>>> parent of 8286900... Merge pull request #28 from AjTarczy/US2-2
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-<<<<<<< HEAD
         TextView text = findViewById(R.id.textView);
         text.setText(information);
         
@@ -130,7 +126,4 @@ public class MainActivity extends AppCompatActivity {
         
 
 
-=======
-    }
->>>>>>> parent of 8286900... Merge pull request #28 from AjTarczy/US2-2
 }
