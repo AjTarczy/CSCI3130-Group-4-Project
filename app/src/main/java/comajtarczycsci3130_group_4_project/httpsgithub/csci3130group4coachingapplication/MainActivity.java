@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,7 +16,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity
 {
-    String information = "test";
 
     private EditText mUsernameView;
     private EditText mPasswordView;
@@ -31,9 +29,7 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView text = findViewById(R.id.textView);
-        text.setText(information);
-        
+
         Button mLoginButton = findViewById(R.id.login_button);
 
         //set event listener for login button press
@@ -103,27 +99,6 @@ public class MainActivity extends AppCompatActivity
         startActivity(new Intent(MainActivity.this, RegistrationActivity.class));
     }
 
-    public void editProfile(View view)
-    {
-        Intent showEditProfile = new Intent(this, editProfile.class);
-        startActivity(showEditProfile);
-    }
-    public void plans(View view)
-    {
-        Intent showPlans = new Intent(this, plans.class);
-        startActivity(showPlans);
-    }
-    public void manageCoach(View view)
-    {
-        Intent showManageCoach = new Intent(this, manageCoach.class);
-        startActivity(showManageCoach);
-    }
-    public void statistics(View view)
-    {
-        Intent showStatistics = new Intent(this, Statistics.class);
-        startActivity(showStatistics);
-    }
-        
 
 
 }
