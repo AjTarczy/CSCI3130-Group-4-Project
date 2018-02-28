@@ -12,6 +12,7 @@
     <ScrollView
 =======
 
+<<<<<<< HEAD
   
 
        <ScrollView
@@ -23,61 +24,98 @@
     <ScrollView
 >>>>>>> parent of 69d8294... Merge pull request #29 from AjTarczy/US4
         android:id="@+id/registration_form"
+=======
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
+>>>>>>> parent of 1e37f8e... Merge branch 'master' into US4
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context="com.example.lizzie.csci3130groupproject.MainActivity"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp">
 
+<<<<<<< HEAD
         <LinearLayout
             android:id="@+id/email_registration_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+=======
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/button_one"
+            android:onClick="editProfile"
+            android:text="Edit Profile" />
 
-            <EditText
-                android:id="@+id/main_username_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Username" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/button"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/button"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/button_two"
+            android:onClick="plans"
+            android:text="Plans" />
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button4"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/button2"
+            android:layout_toRightOf="@+id/button2"
+            android:background="@drawable/button_three"
+            android:onClick="manageCoach"
+            android:text="Manage Coach" />
 
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/button2"
+            android:layout_alignBottom="@+id/button2"
+            android:layout_alignLeft="@+id/button3"
+            android:layout_alignStart="@+id/button3"
+            android:background="@drawable/button_four"
+            android:onClick="statistics"
+            android:text="Statistics" />
 
-            </android.support.design.widget.TextInputLayout>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_above="@+id/button"
+            android:layout_alignStart="@+id/button"
+            android:layout_marginBottom="16dp"
+            android:src="@mipmap/ic_launcher_round"
+            tools:layout_editor_absoluteX="154dp"
+            tools:layout_editor_absoluteY="0dp" />
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_alignEnd="@+id/button3"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_marginStart="21dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:text="TextView" />
+>>>>>>> parent of 1e37f8e... Merge branch 'master' into US4
 
-                <EditText
-                    android:id="@+id/main_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Password"
-                    android:imeActionId="6"
-                    android:imeActionLabel="@string/action_sign_in_short"
-                    android:imeOptions="actionUnspecified"
-                    android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:singleLine="true"/>
-
-            </android.support.design.widget.TextInputLayout>
-
-        </LinearLayout>
-    </ScrollView>
-
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="Login/Register"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

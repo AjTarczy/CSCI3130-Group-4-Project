@@ -2,11 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication">
 
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -29,6 +24,7 @@
         <activity android:name=".plans" />
         <activity android:name=".Statistics" />
         <activity android:name=".manageCoach"></activity>
+<<<<<<< HEAD
 >>>>>>> parent of 6268add... Revert "Merge pull request #28 from AjTarczy/US2-2"
 =======
 >>>>>>> parent of fe6b6a4... Merge branch 'master' of https://github.com/AjTarczy/CSCI3130-Group-4-Project
@@ -41,6 +37,8 @@
             android:name=".LoggedInActivity"
             android:label="@string/title_activity_logged_in"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+=======
+>>>>>>> parent of 1e37f8e... Merge branch 'master' into US4
     </application>
 
 </manifest>

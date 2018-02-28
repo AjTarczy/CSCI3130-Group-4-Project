@@ -3,26 +3,17 @@ package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingap
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+<<<<<<< HEAD
 import android.widget.Button;
 import android.widget.EditText;
+=======
+import android.widget.TextView;
+>>>>>>> parent of 1e37f8e... Merge branch 'master' into US4
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity
 {
-
-    private EditText mUsernameView;
-    private EditText mPasswordView;
-
-    //create database reference
-    final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference usersRef = database.getReference("users");
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -36,6 +27,7 @@ public class MainActivity extends AppCompatActivity
 =======
         TextView text = findViewById(R.id.textView);
         text.setText(information);
+<<<<<<< HEAD
         
 >>>>>>> parent of 6268add... Revert "Merge pull request #28 from AjTarczy/US2-2"
 =======
@@ -91,22 +83,11 @@ public class MainActivity extends AppCompatActivity
                             }
                         }
 
+=======
+>>>>>>> parent of 1e37f8e... Merge branch 'master' into US4
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError)
-                    {
-
-                    }
-                });
-
-            }
-        });
     }
-
-    private void login()
-    {
-        startActivity(new Intent(MainActivity.this, LoggedInActivity.class));
-    }
+<<<<<<< HEAD
 
     private void register()
     {
@@ -115,4 +96,26 @@ public class MainActivity extends AppCompatActivity
 
 
 
+=======
+    public void editProfile(View view)
+    {
+        Intent showEditProfile = new Intent(this, editProfile.class);
+        startActivity(showEditProfile);
+    }
+    public void plans(View view)
+    {
+        Intent showPlans = new Intent(this, plans.class);
+        startActivity(showPlans);
+    }
+    public void manageCoach(View view)
+    {
+        Intent showManageCoach = new Intent(this, manageCoach.class);
+        startActivity(showManageCoach);
+    }
+    public void statistics(View view)
+    {
+        Intent showStatistics = new Intent(this, Statistics.class);
+        startActivity(showStatistics);
+    }
+>>>>>>> parent of 1e37f8e... Merge branch 'master' into US4
 }
