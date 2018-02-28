@@ -7,7 +7,7 @@ import android.view.View;
 
 public class Athletes extends AppCompatActivity {
 
-    String
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,15 +15,5 @@ public class Athletes extends AppCompatActivity {
         setContentView(R.layout.athletes);
     }
 
-    public void plans(View view)
-    {
-        Intent showPlans = new Intent(this, plans.class);
-        startActivity(showPlans);
-    }
 
-    public void statistics(View view)
-    {
-        Intent showStatistics = new Intent(this, Statistics.class);
-        startActivity(showStatistics);
-    }
 }
