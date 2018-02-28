@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
         TextView text = findViewById(R.id.textView);
@@ -40,6 +41,9 @@ public class MainActivity extends AppCompatActivity
 =======
 
 >>>>>>> parent of fe6b6a4... Merge branch 'master' of https://github.com/AjTarczy/CSCI3130-Group-4-Project
+=======
+
+>>>>>>> parent of 69d8294... Merge pull request #29 from AjTarczy/US4
         Button mLoginButton = findViewById(R.id.login_button);
 
         //set event listener for login button press
