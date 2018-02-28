@@ -6,7 +6,14 @@
     android:layout_height="match_parent"
     tools:context="comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication.MainActivity">
 
+<<<<<<< HEAD
     <ScrollView
+=======
+
+  
+
+       <ScrollView
+>>>>>>> parent of 6268add... Revert "Merge pull request #28 from AjTarczy/US2-2"
         android:id="@+id/registration_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

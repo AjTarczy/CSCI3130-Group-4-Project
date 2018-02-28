@@ -26,6 +26,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+<<<<<<< HEAD
+=======
+    androidTestImplementation 'com.android.support.test.espresso:espresso-intents:3.0.1'
+>>>>>>> parent of 6268add... Revert "Merge pull request #28 from AjTarczy/US2-2"
     compile 'com.google.firebase:firebase-core:11.8.0'
     compile 'com.google.firebase:firebase-database:11.8.0'
     implementation 'com.android.support:design:27.0.2'

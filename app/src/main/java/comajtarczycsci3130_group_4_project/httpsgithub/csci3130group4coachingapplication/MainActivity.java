@@ -29,7 +29,13 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+<<<<<<< HEAD
 
+=======
+        TextView text = findViewById(R.id.textView);
+        text.setText(information);
+        
+>>>>>>> parent of 6268add... Revert "Merge pull request #28 from AjTarczy/US2-2"
         Button mLoginButton = findViewById(R.id.login_button);
 
         //set event listener for login button press

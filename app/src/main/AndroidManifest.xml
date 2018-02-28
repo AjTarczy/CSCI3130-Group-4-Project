@@ -21,6 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
+=======
+        <activity android:name=".editProfile" />
+        <activity android:name=".plans" />
+        <activity android:name=".Statistics" />
+        <activity android:name=".manageCoach"></activity>
+>>>>>>> parent of 6268add... Revert "Merge pull request #28 from AjTarczy/US2-2"
         <activity
             android:name=".RegistrationActivity"
             android:label="@string/title_activity_registration"
