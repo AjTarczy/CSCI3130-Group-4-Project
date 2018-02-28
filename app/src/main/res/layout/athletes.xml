@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="84dp"
-        android:text="Button"
+        android:text="Statistics"
         android:onClick="statistics"
         app:layout_constraintEnd_toStartOf="@+id/button6"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="17dp"
-        android:text="Button"
+        android:text="Plans"
         android:onClick="plans"
         app:layout_constraintBaseline_toBaselineOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="40dp"
-        android:text="Button"
+        android:text="Statistics"
         android:onClick="statistics"
         app:layout_constraintEnd_toStartOf="@+id/button10"
         app:layout_constraintTop_toBottomOf="@+id/button5" />
@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="Button"
+        android:text="Plans"
         android:onClick="plans"
         app:layout_constraintBaseline_toBaselineOf="@+id/button7"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="44dp"
         android:layout_marginEnd="8dp"
-        android:text="Button"
+        android:text="Statistics"
         android:onClick="statistics"
         app:layout_constraintBottom_toTopOf="@+id/button13"
         app:layout_constraintEnd_toStartOf="@+id/button12" />
@@ -63,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="17dp"
-        android:text="button"
+        android:text="Plans"
         android:onClick="plans"
         app:layout_constraintBaseline_toBaselineOf="@+id/button11"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -74,7 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:layout_marginEnd="8dp"
-        android:text="Button"
+        android:text="Statistics"
         android:onClick="statistics"
         app:layout_constraintBottom_toTopOf="@+id/button15"
         app:layout_constraintEnd_toStartOf="@+id/button14" />
@@ -84,7 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="17dp"
-        android:text="Button"
+        android:text="Plans"
         android:onClick="plans"
         app:layout_constraintBaseline_toBaselineOf="@+id/button13"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -95,7 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:layout_marginEnd="8dp"
-        android:text="Button"
+        android:text="Statistics"
         android:onClick="statistics"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button16" />
@@ -106,7 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:layout_marginEnd="16dp"
-        android:text="Button"
+        android:text="Plans"
         android:onClick="plans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
