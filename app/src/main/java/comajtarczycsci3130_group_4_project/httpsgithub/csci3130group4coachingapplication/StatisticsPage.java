@@ -46,7 +46,7 @@ public class StatisticsPage {
         double result = (lintAge*ldubAgeConst + ldubWeight*ldubWeightConst + ldubHeartRateConst -
                 ldubConstant)*(ldubTimeSpentExercising/ldubTimeSpentExercisingConst);
 
-        return result;
+        return Math.round(result * 100.0)/100.0;
     }
 
     public static double getDailyDistanceRan(){ return 3;}
@@ -62,4 +62,20 @@ public class StatisticsPage {
     public static double getDistanceRanYesterday(){return 3;}
     public static double getDistanceRanLastWeek(){return 3;}
     public static double getDistanceRanLastMonth(){return 3;}
+
+    public static double getComparedDistanceTodayVsYesterday(){
+        double result = getDailyDistanceRan()/getDistanceRanYesterday();
+        return Math.round(result * 100.0)/100.0;
+    }
+
+    public static double getComparedDistanceThisWeekVsLastWeek(){
+        double result = getWeeklyDistanceRan()/getDistanceRanLastWeek();
+        return Math.round(result * 100.0)/100.0;
+    }
+
+    public static double getComparedDistanceThisMontVsLastMonth(){
+        double result = getMonthlyDistanceRan()/getDistanceRanLastMonth();
+        return Math.round(result * 100.0)/100.0;
+    }
+
 }

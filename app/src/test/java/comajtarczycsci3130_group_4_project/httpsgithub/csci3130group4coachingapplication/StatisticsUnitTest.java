@@ -83,7 +83,7 @@ public class StatisticsUnitTest {
         int age = 37;
         double weight = 197;
         double time = 127;
-        assertEquals(1392.475, StatisticsPage.calculateCalsBurned(sex, age, weight, time), 0.001);
+        assertEquals(1392.47, StatisticsPage.calculateCalsBurned(sex, age, weight, time), 0);
     }
 
 
@@ -94,7 +94,7 @@ public class StatisticsUnitTest {
         int age = 37;
         double weight = 197;
         double time = 127;
-        assertEquals(1436.022, StatisticsPage.calculateCalsBurned(sex, age, weight, time), 0.001);
+        assertEquals(1436.02, StatisticsPage.calculateCalsBurned(sex, age, weight, time), 0);
     }
 
 
@@ -151,6 +151,19 @@ public class StatisticsUnitTest {
         assertEquals(3.0, StatisticsPage.getDistanceRanLastMonth(), 0);
     }
 
+    //tests for compared distance ran
+    @Test
+    public void comparedDistanceTodayVsYesterday(){
+        assertEquals(1, StatisticsPage.getComparedDistanceTodayVsYesterday(), 0.001);
+    }
+    @Test
+    public void comparedDistanceThisWeekVsLastWeek(){
+        assertEquals(1, StatisticsPage.getComparedDistanceThisWeekVsLastWeek(), 0.001);
+    }
+    @Test
+    public void comparedDistanceThisMonthVsLastMonth(){
+        assertEquals(1, StatisticsPage.getComparedDistanceThisMontVsLastMonth(), 0.001);
+    }
 
 /*
     @AfterClass
