@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 
-public class MainActivity extends AppCompatActivity
+public class amainpage extends AppCompatActivity
 {
     String information = "test";
 
@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.amainpage);
         TextView text = findViewById(R.id.textView);
         text.setText(information);
 
