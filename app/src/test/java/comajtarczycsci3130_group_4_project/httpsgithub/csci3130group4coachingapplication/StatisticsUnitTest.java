@@ -68,21 +68,37 @@ public class StatisticsUnitTest {
     public void allTimeCalsBurned(){
         assertEquals(3.0, StatisticsPage.getAllTimeCalsBurned(), 0);
     }
-/*
-    //calorie calculation test
-    @Test
-    public void calculateMaleCaloriesBurned(){}
 
     @Before
-    public void createFemaleUser(){}
+    public void createMaleUserData(){
+        String sex = "male";
+        int age = 37;
+        double weight = 197;
+        double time = 127;
+    }
 
     @Test
-    public void calculateFemaleCaloriesBurned(){}
+    public void calculateMaleCaloriesBurned(){
+        String sex = "male";
+        int age = 37;
+        double weight = 197;
+        double time = 127;
+        assertEquals(1392.475, StatisticsPage.calculateCalsBurned(sex, age, weight, time), 0.001);
+    }
 
-    @After
-    public void removeFemaleUser(){}
 
-*/
+
+    @Test
+    public void calculateFemaleCaloriesBurned(){
+        String sex = "female";
+        int age = 37;
+        double weight = 197;
+        double time = 127;
+        assertEquals(1436.022, StatisticsPage.calculateCalsBurned(sex, age, weight, time), 0.001);
+    }
+
+
+
     //tests to check total distance ran by user in meters
     @Test
     public void dailyDistanceRan(){

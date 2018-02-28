@@ -6,7 +6,7 @@ package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingap
 
 public class StatisticsPage {
 
-    public static int getTotalDailyTasks(){ return 3}
+    public static int getTotalDailyTasks(){ return 3;}
     public static int getTotalWeeklyTasks(){ return 3;}
     public static int getTotalMonthlyTasks(){ return 3;}
     public static int getTotalAllTimeTasks(){ return 3;}
@@ -22,7 +22,7 @@ public class StatisticsPage {
     public static double getAllTimeCalsBurned(){ return 3;}
 
     public static double calculateCalsBurned(String lstrSex, int lintAge, double ldubWeight,
-                                             int lintTimeSpentExercising){
+                                             double ldubTimeSpentExercising){
 
         double ldubAgeConst=0, ldubWeightConst=0, ldubHeartRateConst=0,
                 ldubTimeSpentExercisingConst=0, ldubConstant=0;
@@ -44,7 +44,7 @@ public class StatisticsPage {
         }
 
         double result = (lintAge*ldubAgeConst + ldubWeight*ldubWeightConst + ldubHeartRateConst -
-                ldubConstant)*(lintTimeSpentExercising/ldubTimeSpentExercisingConst);
+                ldubConstant)*(ldubTimeSpentExercising/ldubTimeSpentExercisingConst);
 
         return result;
     }
@@ -62,6 +62,4 @@ public class StatisticsPage {
     public static double getDistanceRanYesterday(){return 3;}
     public static double getDistanceRanLastWeek(){return 3;}
     public static double getDistanceRanLastMonth(){return 3;}
-
-    public static double
 }
