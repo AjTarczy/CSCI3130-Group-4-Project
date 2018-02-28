@@ -23,7 +23,6 @@ public class LoggedInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logged_in);
 
-
         Button mLogoutButton = findViewById(R.id.logout_button);
 
         mLogoutButton.setOnClickListener(new View.OnClickListener()

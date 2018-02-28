@@ -67,7 +67,6 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
     private static final String[] genderListItems = {"Male", "Female", "Prefer not to specify"};
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

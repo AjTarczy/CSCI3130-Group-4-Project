@@ -39,8 +39,7 @@ public class RegistrationTest
         onView(withId(R.id.username_input)).check(matches(withText(test)));
 
     }
-
-
+    
     @Test
     public void testEmail()
     {
