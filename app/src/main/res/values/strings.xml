@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">CSCI3130 Group 4 Coaching Application</string>
-<<<<<<< HEAD
     <string-array name="spinnerItems">
         <item>Today</item>
         <item>This Week</item>
@@ -22,6 +21,5 @@
         completions."
     </string>
     <string name="title_activity_logged_in">LoggedInActivity</string>
-=======
->>>>>>> US4
+
 </resources>
