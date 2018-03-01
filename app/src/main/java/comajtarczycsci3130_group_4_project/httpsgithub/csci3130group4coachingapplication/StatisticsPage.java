@@ -90,7 +90,7 @@ public class StatisticsPage extends AppCompatActivity {
     }
 
     public static double calculateCalsBurned(String lstrSex, int lintAge, double ldubWeight,
-                                             int lintTimeSpentExercising) {
+                                             double lintTimeSpentExercising) {
 
         double ldubAgeConst = 0, ldubWeightConst = 0, ldubHeartRateConst = 0,
                 ldubTimeSpentExercisingConst = 0, ldubConstant = 0;
