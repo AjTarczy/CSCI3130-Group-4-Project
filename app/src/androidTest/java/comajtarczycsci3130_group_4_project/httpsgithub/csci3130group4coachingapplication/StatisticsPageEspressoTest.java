@@ -28,6 +28,6 @@ public class StatisticsPageEspressoTest {
     public void checkThisMonthStats(){}
 
     @Test
-    public void checkTodayStats(){}
+    public void checkAllTimeStats(){}
 
 }
