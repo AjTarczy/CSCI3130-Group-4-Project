@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication.LoggedInActivity"
-    tools:showIn="@layout/activity_logged_in">
+    tools:context="comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication.Statistics">
 
 </android.support.constraint.ConstraintLayout>
