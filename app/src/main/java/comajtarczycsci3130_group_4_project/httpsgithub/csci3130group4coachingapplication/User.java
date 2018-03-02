@@ -7,6 +7,7 @@ package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingap
 //class to store User data for entry into database
 public class User {
 
+    public String username;
     public String email;
     public String password;
     public String firstName;
@@ -22,8 +23,9 @@ public class User {
 
     }
 
-    public User(String email, String password, String firstName, String lastName, String dob, double height, double weight, String gender, String role)
+    public User(String username, String email, String password, String firstName, String lastName, String dob, double height, double weight, String gender, String role)
     {
+        this.username = username;
         this.email = email;
         this.password = password;
         this.firstName = firstName;
@@ -34,6 +36,10 @@ public class User {
         this.gender = gender;
         this.role = role;
 
+    }
+    public String getUsername()
+    {
+        return username;
     }
 
     public String getEmail()
@@ -79,6 +85,11 @@ public class User {
     public String getRole()
     {
         return role;
+    }
+
+    public void setUsername()
+    {
+        this.username = username;
     }
 
     public void setEmail(String email)
