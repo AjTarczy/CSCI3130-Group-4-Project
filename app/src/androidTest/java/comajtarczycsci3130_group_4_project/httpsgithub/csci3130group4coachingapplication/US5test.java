@@ -25,26 +25,26 @@ public class US5test {
 
 
     @Rule
-    public IntentsTestRule<amainpage> intentsTestRule =
-            new IntentsTestRule<>(amainpage.class);
+    public IntentsTestRule<cmainpage> intentsTestRule =
+            new IntentsTestRule<>(cmainpage.class);
 
 
     @Test
-    public void Button1_IsWorking() {
-        onView(withId(R.id.button)).perform(click());
+    public void Button5_IsWorking() {
+        onView(withId(R.id.button5)).perform(click());
         intended(hasComponent(editProfile.class.getName()));
     }
 
     @Test
-    public void Button2_IsWorking() {
-        onView(withId(R.id.button2)).perform(click());
-        intended(hasComponent(plans.class.getName()));
+    public void Button6_IsWorking() {
+        onView(withId(R.id.button7)).perform(click());
+        intended(hasComponent(manageAthlete.class.getName()));
     }
 
     @Test
-    public void Button3_IsWorking() {
-        onView(withId(R.id.button3)).perform(click());
-        intended(hasComponent(manageCoach.class.getName()));
+    public void Button7_IsWorking() {
+        onView(withId(R.id.button6)).perform(click());
+        intended(hasComponent(ListOfAthletes.class.getName()));
     }
 
 }

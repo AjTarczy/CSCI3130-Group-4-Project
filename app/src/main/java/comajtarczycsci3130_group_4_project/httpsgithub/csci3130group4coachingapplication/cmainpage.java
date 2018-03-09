@@ -17,7 +17,7 @@ public class cmainpage extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.amainpage);
+        setContentView(R.layout.coach_main_page);
         TextView text = findViewById(R.id.textView);
         text.setText(information);
 
