@@ -7,7 +7,8 @@ package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingap
 
 public class Activity
 {
-    private boolean isCompleted;
+    int ID;
+    private boolean completed;
     private String description;
     private String date;
 
@@ -16,16 +17,22 @@ public class Activity
 
     }
 
-    public Activity(boolean isCompleted, String description, String date)
+    public Activity(int ID, boolean completed, String description, String date)
     {
-        this.isCompleted = isCompleted;
+        this.ID = ID;
+        this.completed = completed;
         this.description = description;
         this.date = date;
     }
 
-    public void setCompleted(boolean isCompleted)
+    public void setID(int ID)
     {
-        this.isCompleted = isCompleted;
+        this.ID = ID;
+    }
+
+    public void setCompleted(boolean completed)
+    {
+        this.completed = completed;
     }
 
     public void setDescription(String description)
@@ -38,9 +45,9 @@ public class Activity
         this.date = date;
     }
 
-    public boolean getIsCompleted()
+    public boolean isCompleted()
     {
-        return isCompleted;
+        return completed;
     }
 
     public String getDescription()
@@ -51,6 +58,11 @@ public class Activity
     public String getDate()
     {
         return date;
+    }
+
+    public int getID()
+    {
+        return ID;
     }
 
 
