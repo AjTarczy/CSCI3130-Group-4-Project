@@ -154,7 +154,7 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
         };
 
         //create user object, push into database
-        User newUser = new User(email, password, firstName, lastName, dob, height, weight, gender, role);
+        User newUser = new User(username, email, password, firstName, lastName, dob, height, weight, gender, role);
         usersRef.child(username).setValue(newUser, insertListener);
 
     }
