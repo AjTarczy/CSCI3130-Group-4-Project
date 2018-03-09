@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Coach extends User
 {
-    private ArrayList<Athlete> athletes;
+    private ArrayList<Athlete> athletes = new ArrayList<Athlete>();
 
 
     public Coach()
@@ -39,11 +39,11 @@ public class Coach extends User
      * @param athlete
      */
 
-    public void removeAthlete(Athlete athlete)
+    public void removeAthlete(String username)
     {
         for (int i = 0; i < athletes.size(); i++)
         {
-            if (athlete.getUsername().equals(athletes.get(i).getUsername()))
+            if (username.equals(athletes.get(i).getUsername()))
             {
                 athletes.remove(i);
             }
