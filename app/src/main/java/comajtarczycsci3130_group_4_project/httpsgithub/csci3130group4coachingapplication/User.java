@@ -1,11 +1,13 @@
 package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication;
 
+import java.io.Serializable;
+
 /**
  * Created by robertnickerson on 2018-02-20.
  */
 
 //class to store User data for entry into database
-public class User {
+public class User implements Serializable {
 
     public String username;
     public String email;
