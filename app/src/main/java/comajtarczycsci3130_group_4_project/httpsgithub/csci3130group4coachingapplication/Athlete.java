@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by robertnickerson on 2018-03-02.
+ * Class to hold data about Athletes
  */
 
 public class Athlete extends User
@@ -12,26 +13,47 @@ public class Athlete extends User
     private ArrayList<Coach> coaches = new ArrayList<Coach>();
 
 
+    /**
+     * add an Activity object to the athlete's list of activities
+     * @param activity
+     */
     public void addActivity(Activity activity)
     {
         activities.add(activity);
     }
 
+
+    /**
+     * return the athlete's current list of activities
+     * @return activities arraylist
+     */
     public ArrayList<Activity> getActivities()
     {
         return activities;
     }
 
+    /**
+     * add a coach to the athlete's current list of coaches
+     * @param coach
+     */
     public void addCoach(Coach coach)
     {
         coaches.add(coach);
     }
 
+    /**
+     * return the athlete's current list of coaches
+     * @return
+     */
     public ArrayList<Coach> getCoaches()
     {
         return coaches;
     }
 
+    /**
+     * remove a coach with a given username from the athlete's list of coaches
+     * @param username
+     */
     public void removeCoach(String username)
     {
 
@@ -45,7 +67,10 @@ public class Athlete extends User
 
     }
 
-
+    /**
+     * remove an activity with a given ID from the athlete's list of activities
+     * @param ID
+     */
     public void removeActivity(int ID)
     {
         for (int i = 0; i < activities.size(); i++)
