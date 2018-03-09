@@ -30,20 +30,20 @@ public class US5test {
 
 
     @Test
-    public void Button5_IsWorking() {
-        onView(withId(R.id.button5)).perform(click());
+    public void Button1_IsWorking() {
+        onView(withId(R.id.button)).perform(click());
         intended(hasComponent(editProfile.class.getName()));
     }
 
     @Test
-    public void Button6_IsWorking() {
-        onView(withId(R.id.button7)).perform(click());
+    public void Button2_IsWorking() {
+        onView(withId(R.id.button3)).perform(click());
         intended(hasComponent(manageAthlete.class.getName()));
     }
 
     @Test
-    public void Button7_IsWorking() {
-        onView(withId(R.id.button6)).perform(click());
+    public void Button3_IsWorking() {
+        onView(withId(R.id.button2)).perform(click());
         intended(hasComponent(ListOfAthletes.class.getName()));
     }
 
