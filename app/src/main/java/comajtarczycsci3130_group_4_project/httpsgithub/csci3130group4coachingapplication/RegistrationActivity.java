@@ -49,11 +49,7 @@ public class RegistrationActivity extends AppCompatActivity /*implements LoaderC
 
     Intent i = getIntent();
     MyApplicationData appData = (MyApplicationData)i.getSerializableExtra("data");
-
-   /* //create database reference
-    final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference usersRef = database.getReference("users");
-*/
+    
     // UI references.
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
