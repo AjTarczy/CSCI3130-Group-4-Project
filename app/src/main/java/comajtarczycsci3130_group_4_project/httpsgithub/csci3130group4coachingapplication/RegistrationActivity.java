@@ -3,6 +3,7 @@ package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingap
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -44,13 +45,15 @@ import static android.Manifest.permission.READ_CONTACTS;
 
 /**
  */
-public class RegistrationActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
+public class RegistrationActivity extends AppCompatActivity /*implements LoaderCallbacks<Cursor>*/ {
 
+    Intent i = getIntent();
+    MyApplicationData appData = (MyApplicationData)i.getSerializableExtra("data");
 
-    //create database reference
+   /* //create database reference
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference usersRef = database.getReference("users");
-
+*/
     // UI references.
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
@@ -136,7 +139,7 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
         DatabaseReference.CompletionListener insertListener = new DatabaseReference.CompletionListener()
         {
             @Override
-            public void onComplete(DatabaseError databaseError, DatabaseReference usersRef)
+            public void onComplete(DatabaseError databaseError, DatabaseReference useRef)
             {
 
                 if (databaseError != null)
@@ -155,12 +158,12 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
 
         //create user object, push into database
         User newUser = new User(username, email, password, firstName, lastName, dob, height, weight, gender, role);
-        usersRef.child(username).setValue(newUser, insertListener);
+        appData.userRef.child(username).setValue(newUser, insertListener);
 
     }
 
 
-    @Override
+/*   @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
         return new CursorLoader(this,
                 // Retrieve data rows for the device user's 'profile' contact.
@@ -193,7 +196,7 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
     public void onLoaderReset(Loader<Cursor> cursorLoader) {
 
     }
-
+*/
     private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
         //Create adapter to tell the AutoCompleteTextView what to show in its dropdown list.
         ArrayAdapter<String> adapter =
@@ -203,7 +206,7 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
         mEmailView.setAdapter(adapter);
     }
 
-
+/*
     private interface ProfileQuery {
         String[] PROJECTION = {
                 ContactsContract.CommonDataKinds.Email.ADDRESS,
@@ -214,7 +217,7 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
         int IS_PRIMARY = 1;
     }
 
-
+*/
 
 
 
