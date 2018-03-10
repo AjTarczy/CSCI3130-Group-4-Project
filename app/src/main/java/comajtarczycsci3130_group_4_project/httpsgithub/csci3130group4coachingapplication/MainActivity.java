@@ -18,10 +18,8 @@ public class MainActivity extends AppCompatActivity
 
     private EditText mUsernameView;
     private EditText mPasswordView;
-
-    //create database reference
-    final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference usersRef = database.getReference("users");
+    //Get the app wide shared variables
+    public MyApplicationData appData = new MyApplicationData();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -30,6 +28,10 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         Button mLoginButton = findViewById(R.id.login_button);
+
+
+
+
 
         //set event listener for login button press
         mLoginButton.setOnClickListener(new View.OnClickListener()
@@ -42,8 +44,8 @@ public class MainActivity extends AppCompatActivity
 
 
                 //create database event listener to query database for user login info
-                usersRef.addListenerForSingleValueEvent(new ValueEventListener()
-                {
+                appData.userRef.addListenerForSingleValueEvent(new ValueEventListener()
+                    {
                     @Override
                     public void onDataChange(DataSnapshot data)
                     {
@@ -90,12 +92,16 @@ public class MainActivity extends AppCompatActivity
 
     private void login()
     {
-        startActivity(new Intent(MainActivity.this, LoggedInActivity.class));
+        Intent loginIntent = new Intent(MainActivity.this, Dashboard.class);
+        loginIntent.putExtra("data", appData);
+        startActivity(loginIntent);
     }
 
     private void register()
     {
-        startActivity(new Intent(MainActivity.this, RegistrationActivity.class));
+        Intent registrationIntent = new Intent(MainActivity.this, RegistrationActivity.class);
+        registrationIntent.putExtra("data", appData);
+        startActivity(registrationIntent);
     }
 
 
