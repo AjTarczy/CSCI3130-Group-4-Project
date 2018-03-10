@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity
     private EditText mUsernameView;
     private EditText mPasswordView;
     //Get the app wide shared variables
-     final MyApplicationData appData = (MyApplicationData)getApplication();
+    final MyApplicationData appData = (MyApplicationData)getApplication();
 
 
     @Override
