@@ -21,5 +21,6 @@
         completions."
     </string>
     <string name="title_activity_logged_in">LoggedInActivity</string>
+    <string name="title_activity_update_user">UpdateUser</string>
 
 </resources>

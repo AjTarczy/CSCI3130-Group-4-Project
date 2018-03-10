@@ -48,6 +48,7 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
 
 
     //create database reference
+
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference usersRef = database.getReference("users");
 
