@@ -47,9 +47,9 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class RegistrationActivity extends AppCompatActivity /*implements LoaderCallbacks<Cursor>*/ {
 
-    Intent i = getIntent();
-    MyApplicationData appData = (MyApplicationData)i.getSerializableExtra("data");
-    
+    Intent intent = getIntent();
+    MyApplicationData appData = (MyApplicationData)intent.getSerializableExtra("data");
+
     // UI references.
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;

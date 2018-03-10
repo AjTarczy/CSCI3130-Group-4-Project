@@ -5,6 +5,7 @@ package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingap
  */
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -18,6 +19,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 public class StatisticsPage extends AppCompatActivity {
+
+    Intent intent = getIntent();
+    MyApplicationData appData = (MyApplicationData)intent.getSerializableExtra("data");
 
     private TextView tvTasksCompleted = (TextView) findViewById(R.id.tvTasksCompleted);
     private TextView tvCaloriesBurned = (TextView) findViewById(R.id.tvCaloriesBurned);

@@ -92,7 +92,9 @@ public class MainActivity extends AppCompatActivity
 
     private void login()
     {
-        startActivity(new Intent(MainActivity.this, LoggedInActivity.class));
+        Intent loginIntent = new Intent(MainActivity.this, Dashboard.class);
+        loginIntent.putExtra("data", appData);
+        startActivity(loginIntent);
     }
 
     private void register()
