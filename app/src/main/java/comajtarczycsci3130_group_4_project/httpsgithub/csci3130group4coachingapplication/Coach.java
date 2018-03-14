@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by robertnickerson on 2018-03-02.
+ * Class to hold data about Coaches
  */
 
 public class Coach extends User
