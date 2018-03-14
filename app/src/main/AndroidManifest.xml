@@ -27,7 +27,9 @@
         <activity android:name=".editProfile" />
         <activity android:name=".plans" />
         <activity android:name=".Statistics" />
-        <activity android:name=".manageCoach"></activity>
+        <activity android:name=".manageCoach"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>
