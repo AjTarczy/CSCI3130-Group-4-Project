@@ -1,7 +1,7 @@
 package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication;
 
 /**
- * Created by lizzie on 2018-03-08.
+ * Created by lisa on 2018-03-08.
  */
 
 import org.junit.Rule;
@@ -37,14 +37,14 @@ public class US5test {
 
     @Test
     public void Button2_IsWorking() {
-        onView(withId(R.id.button3)).perform(click());
-        intended(hasComponent(manageAthlete.class.getName()));
+        onView(withId(R.id.button2)).perform(click());
+        intended(hasComponent(ListOfAthletes.class.getName()));
     }
 
     @Test
     public void Button3_IsWorking() {
-        onView(withId(R.id.button2)).perform(click());
-        intended(hasComponent(ListOfAthletes.class.getName()));
+        onView(withId(R.id.button3)).perform(click());
+        intended(hasComponent(manageAthlete.class.getName()));
     }
 
 }
