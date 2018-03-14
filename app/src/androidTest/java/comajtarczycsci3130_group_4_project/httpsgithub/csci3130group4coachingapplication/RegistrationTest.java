@@ -125,34 +125,7 @@ public class RegistrationTest
 
     }
 
-    @Test
-    public void testRole()
-    {
-        test = "Athlete";
-
-        ViewActions.closeSoftKeyboard();
-
-        onView(withId(R.id.role_switch)).check(matches(withText(test)));
-
-        test = "Coach";
-
-        onView(withId(R.id.role_switch)).perform(click());
-
-        onView(withId(R.id.role_switch)).check(matches(withText(test)));
 
 
-
-
-    }
-
-    @Test
-    public void testRegister()
-    {
-         ViewActions.closeSoftKeyboard();
-
-        onView(withId(R.id.register_button)).perform(click());
-
-
-    }
 
 }
