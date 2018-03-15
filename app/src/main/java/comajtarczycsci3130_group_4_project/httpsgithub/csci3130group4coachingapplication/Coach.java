@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Coach extends User
 {
     private ArrayList<Athlete> athletes;
+    private ArrayList<Athlete> Requests;
 
 
     public Coach()
@@ -23,6 +24,16 @@ public class Coach extends User
     public ArrayList<Athlete> getAthletes()
     {
         return athletes;
+    }
+
+    /**
+     * return this coaches list of requests
+     * @return
+     */
+
+    public ArrayList<Athlete> getRequests()
+    {
+        return Requests;
     }
 
     /**
@@ -46,6 +57,30 @@ public class Coach extends User
             if (athlete.getUsername().equals(athletes.get(i).getUsername()))
             {
                 athletes.remove(i);
+            }
+        }
+    }
+
+    public void IgnoreRequest(Athlete athlete)
+    {
+        for (int i = 0; i < Requests.size(); i++)
+        {
+            if (athlete.getUsername().equals(Requests.get(i).getUsername()))
+            {
+                athletes.add(athlete);
+                Requests.remove(i);
+            }
+        }
+    }
+
+    public void AcceptRequest(Athlete athlete)
+    {
+        for (int i = 0; i < Requests.size(); i++)
+        {
+            if (athlete.getUsername().equals(Requests.get(i).getUsername()))
+            {
+                athletes.add(athlete);
+                Requests.remove(i);
             }
         }
     }

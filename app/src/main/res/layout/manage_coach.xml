@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="40dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,8 +21,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="40dp"
         android:text="Reject"
+        android:onClick="reject"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,8 +32,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="40dp"
         android:text="Accept"
+        android:onClick="accept"
         app:layout_constraintEnd_toStartOf="@+id/requestReject1"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,6 +55,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:text="Accept"
+        android:onClick="accept"
         app:layout_constraintEnd_toStartOf="@+id/requestReject2"
         app:layout_constraintTop_toBottomOf="@+id/requestAccept1" />
 
@@ -63,6 +66,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:text="Reject"
+        android:onClick="reject"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/requestReject1" />
 
@@ -83,6 +87,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:text="Accept"
+        android:onClick="accept"
         app:layout_constraintEnd_toStartOf="@+id/requestReject3"
         app:layout_constraintTop_toBottomOf="@+id/requestAccept2" />
 
@@ -93,6 +98,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:text="Button"
+        android:onClick="reject"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/requestReject2" />
 
@@ -103,7 +109,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Requests\n\nAthlete List"
+        android:text="Athletes"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/request3" />
@@ -119,12 +126,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
-        android:id="@+id/athleteManage1"
+        android:id="@+id/athleteDelete1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
-        android:text="Manage"
+        android:text="Delete"
+        android:onClick="delete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -139,44 +147,48 @@
         app:layout_constraintTop_toBottomOf="@+id/athleteInfo1" />
 
     <Button
-        android:id="@+id/athleteManage2"
+        android:id="@+id/athleteDelete2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
-        android:text="Manage"
+        android:text="Delete"
+        android:onClick="delete"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/athleteManage1" />
+        app:layout_constraintTop_toBottomOf="@+id/athleteDelete1" />
 
     <Button
-        android:id="@+id/athleteManage3"
+        android:id="@+id/athleteDelete3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
-        android:text="Manage"
+        android:text="Delete"
+        android:onClick="delete"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/athleteManage2" />
+        app:layout_constraintTop_toBottomOf="@+id/athleteDelete2" />
 
     <Button
-        android:id="@+id/athleteManage5"
+        android:id="@+id/athleteDelete5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
-        android:text="Manage"
+        android:text="Delete"
+        android:onClick="delete"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/athleteManage4" />
+        app:layout_constraintTop_toBottomOf="@+id/athleteDelete4" />
 
     <Button
-        android:id="@+id/athleteManage4"
+        android:id="@+id/athleteDelete4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
-        android:text="Manage"
+        android:text="Delete"
+        android:onClick="delete"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/athleteManage3" />
+        app:layout_constraintTop_toBottomOf="@+id/athleteDelete3" />
 
     <TextView
         android:id="@+id/athleteInfo3"
@@ -207,4 +219,16 @@
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/athleteInfo4" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Requests"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp" />
 </android.support.constraint.ConstraintLayout>
