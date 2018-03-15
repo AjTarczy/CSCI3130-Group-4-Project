@@ -67,7 +67,6 @@ public class Coach extends User
         {
             if (athlete.getUsername().equals(Requests.get(i).getUsername()))
             {
-                athletes.add(athlete);
                 Requests.remove(i);
             }
         }
