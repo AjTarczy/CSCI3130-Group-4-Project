@@ -21,7 +21,7 @@ public class US13test
     public IntentsTestRule<manageCoach> intentsTestRule = new IntentsTestRule<>(manageCoach.class);
 
     /**
-     * this is the test to make sure text view are shown
+     * TextView_IsWorking() is to make sure text view are shown
      */
     @Test
     public void TextView_IsWorking()
@@ -36,7 +36,7 @@ public class US13test
         onView(withId(R.id.athleteInfo5)).check(matches(isDisplayed()));
     }
     /**
-     * This is the test to make sure  buttons work well.
+     *  Button_AreWorking() is to make sure buttons work well.
      */
     @Test
     public void Button_AreWorking()
