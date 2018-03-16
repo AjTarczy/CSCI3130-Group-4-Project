@@ -8,13 +8,15 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class manageAthlete extends AppCompatActivity {
-
+public class manageAthlete extends AppCompatActivity
+{
     private Coach sample=new Coach();
     private ArrayList<Athlete> requests=sample.getRequests();
     private ArrayList<Athlete> athletes=sample.getAthletes();
+    private MyApplicationData appState;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manage_athletes);
 
@@ -33,7 +35,8 @@ public class manageAthlete extends AppCompatActivity {
 
         }
 
-        for (int i=0;i<5;i++){
+        for (int i=0;i<5;i++)
+        {
 //            if(athletes.get(i)==null){
 //                textToShow="";}
 //            else{
@@ -50,7 +53,8 @@ public class manageAthlete extends AppCompatActivity {
     public void reject(View view)
     {
         int i=0;
-        switch (view.getId()) {
+        switch (view.getId())
+        {
             case R.id.requestReject1:
                 i=0;
                 break;
@@ -61,9 +65,10 @@ public class manageAthlete extends AppCompatActivity {
                 i=2;
                 break;
         }
-        if(requests.get(i)!=null){
+        if(requests.get(i)!=null)
+        {
             sample.IgnoreRequest(requests.get(i));
-            //appState.firebaseReference.child(sample.username).child("Requests").setValue(sample.getRequests());
+            appState.firebaseReference.child(sample.username).child("Requests").setValue(sample.getRequests());
 
         }
     }
@@ -71,7 +76,8 @@ public class manageAthlete extends AppCompatActivity {
     {
 
         int i=0;
-        switch (view.getId()) {
+        switch (view.getId())
+        {
             case R.id.requestAccept1:
                 i=0;
                 break;
@@ -84,14 +90,15 @@ public class manageAthlete extends AppCompatActivity {
         }
         if(requests.get(i)!=null){
             sample.AcceptRequest(requests.get(i));
-            //appState.firebaseReference.child(sample.username).child("Requests").setValue(sample.getRequests());
-            //appState.firebaseReference.child(sample.username).child("athletes").setValue(sample.getAthletes());
+            appState.firebaseReference.child(sample.username).child("Requests").setValue(sample.getRequests());
+            appState.firebaseReference.child(sample.username).child("athletes").setValue(sample.getAthletes());
         }
     }
     public void delete(View view)
     {
         int i=0;
-        switch (view.getId()) {
+        switch (view.getId())
+        {
             case R.id.athleteDelete1:
                 i=0;
                 break;
@@ -108,9 +115,10 @@ public class manageAthlete extends AppCompatActivity {
                 i=4;
                 break;
         }
-        if(athletes.get(i)!=null){
+        if(athletes.get(i)!=null)
+        {
             sample.removeAthlete(athletes.get(i));
-            //appState.firebaseReference.child(sample.username).child("athletes").setValue(sample.getAthletes());
+            appState.firebaseReference.child(sample.username).child("athletes").setValue(sample.getAthletes());
         }
     }
 }

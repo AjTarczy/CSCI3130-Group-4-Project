@@ -36,7 +36,7 @@ public class US13test
         onView(withId(R.id.athleteInfo5)).check(matches(isDisplayed()));
     }
     /**
-     *  Button_AreWorking() is to make sure buttons work well.
+     *  Button_AreWorking() is to make sure buttons work well
      */
     @Test
     public void Button_AreWorking()
@@ -52,6 +52,15 @@ public class US13test
         onView(withId(R.id.athleteDelete3)).check(matches(withText(("Delete"))));
         onView(withId(R.id.athleteDelete4)).check(matches(withText(("Delete"))));
         onView(withId(R.id.athleteDelete5)).check(matches(withText(("Delete"))));
+    }
+
+    /**
+     *  deleteCoach() is to test deleting a coach
+     */
+    @Test
+    public void deleteCoach()
+    {
+
     }
 
 

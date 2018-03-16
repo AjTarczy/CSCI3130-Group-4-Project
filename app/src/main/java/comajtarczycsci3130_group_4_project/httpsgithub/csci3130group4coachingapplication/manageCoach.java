@@ -65,7 +65,8 @@ public class manageCoach extends AppCompatActivity
                 i=2;
                 break;
         }
-        if(requests.get(i)!=null){
+        if(requests.get(i)!=null)
+        {
             sample.IgnoreRequest(requests.get(i));
             appState.firebaseReference.child(sample.username).child("Requests").setValue(sample.getRequests());
 
@@ -75,7 +76,8 @@ public class manageCoach extends AppCompatActivity
     {
 
         int i=0;
-        switch (view.getId()) {
+        switch (view.getId())
+        {
             case R.id.requestAccept1:
                 i=0;
                 break;
