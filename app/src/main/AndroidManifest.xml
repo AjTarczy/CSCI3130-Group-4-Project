@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StatisticsPage"/>
-        <activity android:name=".amainpage"/>
+        <activity android:name=".StatisticsPage" />
+        <activity android:name=".amainpage" />
         <activity android:name=".Athletes">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,11 +23,11 @@
             android:label="@string/title_activity_registration" />
         <activity
             android:name=".LoggedInActivity"
-            android:label="@string/title_activity_logged_in"></activity>
+            android:label="@string/title_activity_logged_in" />
         <activity android:name=".editProfile" />
         <activity android:name=".plans" />
         <activity android:name=".Statistics" />
-        <activity android:name=".manageCoach"></activity>
+        <activity android:name=".ManageCoach"></activity>
     </application>
 
 </manifest>
