@@ -1,6 +1,5 @@
 package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +7,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class manageCoach extends AppCompatActivity {
+public class manageAthlete extends AppCompatActivity {
 
     private Coach sample=new Coach();
     private ArrayList<Athlete> requests=sample.getRequests();
@@ -16,7 +15,7 @@ public class manageCoach extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.manage_coach);
+        setContentView(R.layout.manage_athlete);
 
 
         String textToShow="sampleee";

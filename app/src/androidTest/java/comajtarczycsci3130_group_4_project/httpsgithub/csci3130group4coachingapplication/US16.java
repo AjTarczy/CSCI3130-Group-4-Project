@@ -17,8 +17,8 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 public class US16 {
     @Rule
-    public IntentsTestRule<manageCoach> intentsTestRule =
-            new IntentsTestRule<>(manageCoach.class);
+    public IntentsTestRule<manageAthlete> intentsTestRule =
+            new IntentsTestRule<>(manageAthlete.class);
 
     /**
      * this is the test to make sure text view are shown

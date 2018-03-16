@@ -32,7 +32,7 @@ public class amainpage extends AppCompatActivity
     }
     public void manageCoach(View view)
     {
-        Intent showManageCoach = new Intent(this, manageCoach.class);
+        Intent showManageCoach = new Intent(this, manageAthlete.class);
         startActivity(showManageCoach);
     }
     public void statistics(View view)

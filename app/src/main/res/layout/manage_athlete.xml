@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication.manageCoach">
+    tools:context="comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication.manageAthlete">
 
     <TextView
         android:id="@+id/request1"
@@ -109,7 +109,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Coaches"
+        android:text="Athletes"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
