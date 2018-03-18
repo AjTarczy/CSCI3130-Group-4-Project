@@ -5,52 +5,107 @@ package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingap
  * Class to hold data about activities assigned to Athletes
  */
 
+
 public class Activity
 {
-    private boolean isCompleted;
+    int ID;
+    private boolean completed;
     private String description;
     private String date;
 
+    /**
+     * empty constructor
+     */
     public Activity()
     {
 
     }
 
-    public Activity(boolean isCompleted, String description, String date)
+    /**
+     * constructor
+     * @param ID
+     * @param completed
+     * @param description
+     * @param date
+     */
+    public Activity(int ID, boolean completed, String description, String date)
     {
-        this.isCompleted = isCompleted;
+        this.ID = ID;
+        this.completed = completed;
         this.description = description;
         this.date = date;
     }
 
-    public void setCompleted(boolean isCompleted)
+    /**
+     * sets activity ID
+     * @param ID
+     */
+    public void setID(int ID)
     {
-        this.isCompleted = isCompleted;
+        this.ID = ID;
     }
 
+    /**
+     * sets whether an activity has been completed
+     * @param completed
+     */
+    public void setCompleted(boolean completed)
+    {
+        this.completed = completed;
+    }
+
+    /**
+     * sets the activity description
+     * @param description
+     */
     public void setDescription(String description)
     {
         this.description = description;
     }
 
+    /**
+     * sets the date of the activity
+     * @param date
+     */
     public void setDate(String date)
     {
         this.date = date;
     }
 
-    public boolean getIsCompleted()
+    /**
+     * returns whether the activity has been completed
+     * @return completed boolean
+     */
+    public boolean isCompleted()
     {
-        return isCompleted;
+        return completed;
     }
 
+    /**
+     * returns the activity description
+     * @return activity description string
+     */
     public String getDescription()
     {
         return description;
     }
 
+    /**
+     * returns the activity date
+     * @return activity date String
+     */
     public String getDate()
     {
         return date;
+    }
+
+    /**
+     * returns the activity ID
+     * @return activity ID int
+     */
+    public int getID()
+    {
+        return ID;
     }
 
 
