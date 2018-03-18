@@ -27,7 +27,11 @@
         <activity android:name=".editProfile" />
         <activity android:name=".plans" />
         <activity android:name=".Statistics" />
-        <activity android:name=".ManageCoach"></activity>
+        <activity android:name=".manageCoach">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
