@@ -29,11 +29,11 @@ public class US13test
         onView(withId(R.id.request1)).check(matches(isDisplayed()));
         onView(withId(R.id.request2)).check(matches(isDisplayed()));
         onView(withId(R.id.request3)).check(matches(isDisplayed()));
-        onView(withId(R.id.athleteInfo1)).check(matches(isDisplayed()));
-        onView(withId(R.id.athleteInfo2)).check(matches(isDisplayed()));
-        onView(withId(R.id.athleteInfo3)).check(matches(isDisplayed()));
-        onView(withId(R.id.athleteInfo4)).check(matches(isDisplayed()));
-        onView(withId(R.id.athleteInfo5)).check(matches(isDisplayed()));
+        onView(withId(R.id.coachInfo1)).check(matches(isDisplayed()));
+        onView(withId(R.id.coachInfo2)).check(matches(isDisplayed()));
+        onView(withId(R.id.coachInfo3)).check(matches(isDisplayed()));
+        onView(withId(R.id.coachInfo4)).check(matches(isDisplayed()));
+        onView(withId(R.id.coachInfo5)).check(matches(isDisplayed()));
     }
     /**
      *  Button_AreWorking() is to make sure buttons work well
@@ -47,22 +47,10 @@ public class US13test
         onView(withId(R.id.requestAccept1)).check(matches(withText(("Accept"))));
         onView(withId(R.id.requestAccept2)).check(matches(withText(("Accept"))));
         onView(withId(R.id.requestAccept3)).check(matches(withText(("Accept"))));
-        onView(withId(R.id.athleteDelete1)).check(matches(withText(("Delete"))));
-        onView(withId(R.id.athleteDelete2)).check(matches(withText(("Delete"))));
-        onView(withId(R.id.athleteDelete3)).check(matches(withText(("Delete"))));
-        onView(withId(R.id.athleteDelete4)).check(matches(withText(("Delete"))));
-        onView(withId(R.id.athleteDelete5)).check(matches(withText(("Delete"))));
+        onView(withId(R.id.coachDelete1)).check(matches(withText(("Delete"))));
+        onView(withId(R.id.coachDelete2)).check(matches(withText(("Delete"))));
+        onView(withId(R.id.coachDelete3)).check(matches(withText(("Delete"))));
+        onView(withId(R.id.coachDelete4)).check(matches(withText(("Delete"))));
+        onView(withId(R.id.coachDelete5)).check(matches(withText(("Delete"))));
     }
-
-    /**
-     *  deleteCoach() is to test deleting a coach
-     */
-    @Test
-    public void deleteCoach()
-    {
-
-    }
-
-
-
 }

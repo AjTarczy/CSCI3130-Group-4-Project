@@ -10,9 +10,9 @@ import java.util.ArrayList;
 
 public class manageCoach extends AppCompatActivity
 {
-    private Coach sample=new Coach();
-    private ArrayList<Athlete> requests=sample.getRequests();
-    private ArrayList<Athlete> athletes=sample.getAthletes();
+    private Athlete sample=new Athlete();
+    private ArrayList<Coach> requests=sample.getRequests();
+    private ArrayList<Coach> coaches=sample.getCoaches();
     private MyApplicationData appState;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -92,7 +92,7 @@ public class manageCoach extends AppCompatActivity
         {
             sample.AcceptRequest(requests.get(i));
             appState.firebaseReference.child(sample.username).child("Requests").setValue(sample.getRequests());
-            appState.firebaseReference.child(sample.username).child("athletes").setValue(sample.getAthletes());
+            appState.firebaseReference.child(sample.username).child("coaches").setValue(sample.getCoaches());
         }
     }
     public void delete(View view)
@@ -116,10 +116,10 @@ public class manageCoach extends AppCompatActivity
                 i=4;
                 break;
         }
-        if(athletes.get(i)!=null)
+        if(coaches.get(i)!=null)
         {
-            sample.removeAthlete(athletes.get(i));
-            appState.firebaseReference.child(sample.username).child("athletes").setValue(sample.getAthletes());
+            sample.removeCoach(coaches.get(i).getUsername());
+            appState.firebaseReference.child(sample.username).child("coaches").setValue(sample.getCoaches());
         }
     }
 }
