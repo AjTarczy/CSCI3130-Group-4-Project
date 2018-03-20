@@ -140,7 +140,7 @@
                 android:textOn="Coach"/>
 
             <Button
-                android:id="@+id/register_button"
+                android:id="@+id/submit_registration"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

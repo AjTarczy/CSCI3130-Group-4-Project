@@ -12,25 +12,11 @@ import java.io.Serializable;
  */
 
 
-public class MyApplicationData implements Serializable {
+public class MyApplicationData extends Application {
 
-    public static FirebaseDatabase database;
-    public DatabaseReference userRef;
-    public DatabaseReference statRef;
-    public User currentUser;
-
-    public MyApplicationData(){
-       database = FirebaseDatabase.getInstance();
-       userRef = database.getReference("users");
-       statRef = database.getReference("stats");
-    }
-
-    public void setCurrentUser(User currentUser){
-        this.currentUser = currentUser;
-    }
-
-
-
-
+    public  FirebaseDatabase database;
+    public  DatabaseReference userRef;
+    public  DatabaseReference statRef;
+    public  User currentUser;
 
 }

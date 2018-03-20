@@ -20,6 +20,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -45,10 +46,9 @@ import static android.Manifest.permission.READ_CONTACTS;
 
 /**
  */
-public class RegistrationActivity extends AppCompatActivity /*implements LoaderCallbacks<Cursor>*/ {
+public class RegistrationActivity extends AppCompatActivity {
 
-    Intent i = getIntent();
-    MyApplicationData appData = (MyApplicationData)i.getSerializableExtra("data");
+    //MyApplicationData appState;
     
     // UI references.
     private AutoCompleteTextView mEmailView;
@@ -66,10 +66,17 @@ public class RegistrationActivity extends AppCompatActivity /*implements LoaderC
     private static final String[] genderListItems = {"Male", "Female", "Prefer not to specify"};
 
 
+    //create database reference
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference usersRef = database.getReference("users");
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+       // appState = (MyApplicationData)getApplicationContext();
 
         setContentView(R.layout.activity_registration);
         // Set up the login form.
@@ -90,7 +97,7 @@ public class RegistrationActivity extends AppCompatActivity /*implements LoaderC
         genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mGenderView.setAdapter(genderAdapter);
 
-        Button mRegisterButton = findViewById(R.id.register_button);
+        Button mRegisterButton = findViewById(R.id.submit_registration);
 
         mRegisterButton.setOnClickListener(new OnClickListener()
         {
@@ -131,15 +138,21 @@ public class RegistrationActivity extends AppCompatActivity /*implements LoaderC
             role = mRoleView.getTextOff().toString();
         }
 
+
+
         //check if insertion is successful or not
         DatabaseReference.CompletionListener insertListener = new DatabaseReference.CompletionListener()
         {
             @Override
-            public void onComplete(DatabaseError databaseError, DatabaseReference useRef)
+            public void onComplete(DatabaseError databaseError, DatabaseReference usersRef)
             {
+
+                Log.d("test", "test1");
 
                 if (databaseError != null)
                 {
+                    Log.d("test", "test2");
+
                     //Failed insertion
                 }
 
@@ -154,71 +167,22 @@ public class RegistrationActivity extends AppCompatActivity /*implements LoaderC
 
         //create user object, push into database
         User newUser = new User(username, email, password, firstName, lastName, dob, height, weight, gender, role);
-        appData.userRef.child(username).setValue(newUser, insertListener);
+        Log.d("test", "username:" + newUser.getUsername());
+        Log.d("test", "email:" + newUser.getEmail());
+        Log.d("test", "password:" + newUser.getPassword());
+        Log.d("test", "firstname:" + newUser.getFirstName());
+        Log.d("test", "lastname:" + newUser.getLastName());
+        Log.d("test", "dob:" + newUser.getdob());
+        Log.d("test", "height:" + newUser.getHeight());
+        Log.d("test", "weight:" + newUser.getWeight());
+        Log.d("test", "gender:" + newUser.getGender());
+        Log.d("test", "role:" + newUser.getRole());
+
+
+
+        usersRef.child(username).setValue(newUser, insertListener);
 
     }
-
-
-/*   @Override
-    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
-        return new CursorLoader(this,
-                // Retrieve data rows for the device user's 'profile' contact.
-                Uri.withAppendedPath(ContactsContract.Profile.CONTENT_URI,
-                        ContactsContract.Contacts.Data.CONTENT_DIRECTORY), ProfileQuery.PROJECTION,
-
-                // Select only email addresses.
-                ContactsContract.Contacts.Data.MIMETYPE +
-                        " = ?", new String[]{ContactsContract.CommonDataKinds.Email
-                .CONTENT_ITEM_TYPE},
-
-                // Show primary email addresses first. Note that there won't be
-                // a primary email address if the user hasn't specified one.
-                ContactsContract.Contacts.Data.IS_PRIMARY + " DESC");
-    }
-
-    @Override
-    public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
-        List<String> emails = new ArrayList<>();
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            emails.add(cursor.getString(ProfileQuery.ADDRESS));
-            cursor.moveToNext();
-        }
-
-        addEmailsToAutoComplete(emails);
-    }
-
-    @Override
-    public void onLoaderReset(Loader<Cursor> cursorLoader) {
-
-    }
-*/
-    private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
-        //Create adapter to tell the AutoCompleteTextView what to show in its dropdown list.
-        ArrayAdapter<String> adapter =
-                new ArrayAdapter<>(RegistrationActivity.this,
-                        android.R.layout.simple_dropdown_item_1line, emailAddressCollection);
-
-        mEmailView.setAdapter(adapter);
-    }
-
-/*
-    private interface ProfileQuery {
-        String[] PROJECTION = {
-                ContactsContract.CommonDataKinds.Email.ADDRESS,
-                ContactsContract.CommonDataKinds.Email.IS_PRIMARY,
-        };
-
-        int ADDRESS = 0;
-        int IS_PRIMARY = 1;
-    }
-
-*/
-
-
-
-
-
 
 }
 

@@ -3,6 +3,7 @@ package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingap
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,17 +20,25 @@ public class MainActivity extends AppCompatActivity
     private EditText mUsernameView;
     private EditText mPasswordView;
     //Get the app wide shared variables
-    public MyApplicationData appData = new MyApplicationData();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        MyApplicationData appData = (MyApplicationData) getApplication();
+
+        appData.database = FirebaseDatabase.getInstance();
+        appData.userRef = appData.database.getReference("users");
+
+        final DatabaseReference localUserRef = appData.userRef;
+
         Button mLoginButton = findViewById(R.id.login_button);
-
-
+        Button mRegisterButton = findViewById(R.id.register_button);
+        Button mUpdateButton = findViewById(R.id.update_button);
 
 
 
@@ -42,13 +51,13 @@ public class MainActivity extends AppCompatActivity
                 mUsernameView = (EditText) findViewById(R.id.main_username_input);
                 mPasswordView = (EditText) findViewById(R.id.main_password);
 
-
                 //create database event listener to query database for user login info
-                appData.userRef.addListenerForSingleValueEvent(new ValueEventListener()
+                localUserRef.addListenerForSingleValueEvent(new ValueEventListener()
                     {
                     @Override
                     public void onDataChange(DataSnapshot data)
                     {
+
 
                         String username = mUsernameView.getText().toString();
                         String password = mPasswordView.getText().toString();
@@ -58,7 +67,6 @@ public class MainActivity extends AppCompatActivity
                         {
                             return;
                         }
-
                             //if username is in the database
                             if (data.child(username).exists())
                             {
@@ -66,15 +74,9 @@ public class MainActivity extends AppCompatActivity
                                 //if password in database matches entered password
                                 if (data.child(username).child("password").getValue().equals(password))
                                 {
-                                    login();
+                                    User retrievedUser = data.getValue(User.class);
+                                    login(retrievedUser);
                                 }
-
-                            }
-
-                            //if user enters an unrecognized username, go to registration page
-                            else
-                            {
-                                register();
                             }
                         }
 
@@ -88,18 +90,97 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
+
+        //set event listener for login button press
+        mUpdateButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                mUsernameView = (EditText) findViewById(R.id.main_username_input);
+                mPasswordView = (EditText) findViewById(R.id.main_password);
+
+                //create database event listener to query database for user login info
+                localUserRef.addListenerForSingleValueEvent(new ValueEventListener()
+                {
+                    @Override
+                    public void onDataChange(DataSnapshot data)
+                    {
+
+
+                        String username = mUsernameView.getText().toString();
+                        String password = mPasswordView.getText().toString();
+
+                        //if username is blank
+                        if (username.equals(""))
+                        {
+                            return;
+                        }
+                        //if username is in the database
+                        if (data.child(username).exists())
+                        {
+
+                            //if password in database matches entered password
+                            if (data.child(username).child("password").getValue().equals(password))
+                            {
+                                User retrievedUser = data.getValue(User.class);
+                                update(retrievedUser);
+                            }
+                        }
+                    }
+
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError)
+                    {
+
+                    }
+                });
+
+            }
+        });
+
+        //set event listener for register button press
+        mRegisterButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                register();
+            }
+        });
     }
 
-    private void login()
+    /**
+     * login with the user retrieved from the database
+     * @param user
+     */
+    private void login(User user)
     {
-        startActivity(new Intent(MainActivity.this, LoggedInActivity.class));
+        Intent intent = new Intent(this, amainpage.class);
+        intent.putExtra("user", user);
+
+        startActivity(intent);
+
     }
 
+    /**
+     * launch the registration page
+     */
     private void register()
     {
-        Intent registrationIntent = new Intent(MainActivity.this, RegistrationActivity.class);
-        registrationIntent.putExtra("data", appData);
+
+        Intent registrationIntent = new Intent(this, RegistrationActivity.class);
         startActivity(registrationIntent);
+    }
+
+    private void update(User user)
+    {
+        Intent intent = new Intent(this, UpdateUser.class);
+        intent.putExtra("user", user);
+
+        startActivity(intent);
+
     }
 
 

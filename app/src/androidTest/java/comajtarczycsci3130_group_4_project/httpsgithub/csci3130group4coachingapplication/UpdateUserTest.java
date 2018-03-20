@@ -132,13 +132,13 @@ public class UpdateUserTest
 
         ViewActions.closeSoftKeyboard();
 
-        onView(withId(R.id.role_switch)).check(matches(withText(test)));
+        onView(withId(R.id.role_update)).check(matches(withText(test)));
 
         test = "Coach";
 
-        onView(withId(R.id.role_switch)).perform(click());
+        onView(withId(R.id.role_update)).perform(click());
 
-        onView(withId(R.id.role_switch)).check(matches(withText(test)));
+        onView(withId(R.id.role_update)).check(matches(withText(test)));
 
 
 
@@ -150,7 +150,7 @@ public class UpdateUserTest
     {
         ViewActions.closeSoftKeyboard();
 
-        onView(withId(R.id.register_button)).perform(click());
+        onView(withId(R.id.update_button)).perform(click());
 
 
     }
