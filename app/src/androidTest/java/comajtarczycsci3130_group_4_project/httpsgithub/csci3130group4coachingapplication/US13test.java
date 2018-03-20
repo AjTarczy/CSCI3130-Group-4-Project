@@ -34,7 +34,9 @@ public class US13test
         onView(withId(R.id.coachInfo3)).check(matches(isDisplayed()));
         onView(withId(R.id.coachInfo4)).check(matches(isDisplayed()));
         onView(withId(R.id.coachInfo5)).check(matches(isDisplayed()));
+
     }
+
     /**
      *  Button_AreWorking() is to make sure buttons work well
      */

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class manageCoach extends AppCompatActivity
 {
     private Athlete sample=new Athlete();
+    private Coach sampleCoach=new Coach();
     private ArrayList<Coach> requests=sample.getRequests();
     private ArrayList<Coach> coaches=sample.getCoaches();
     private MyApplicationData appState;
@@ -42,7 +43,7 @@ public class manageCoach extends AppCompatActivity
 //            else{
 //                textToShow="sampleee";
 //            }
-            int id = getResources().getIdentifier("athleteInfo"+(i+1), "id", getPackageName());
+            int id = getResources().getIdentifier("coachInfo"+(i+1), "id", getPackageName());
             TextView text = findViewById(id);
             text.setText(textToShow);
 
@@ -93,6 +94,9 @@ public class manageCoach extends AppCompatActivity
             sample.AcceptRequest(requests.get(i));
             appState.firebaseReference.child(sample.username).child("Requests").setValue(sample.getRequests());
             appState.firebaseReference.child(sample.username).child("coaches").setValue(sample.getCoaches());
+            sampleCoach = requests.get(i);
+            sampleCoach.addAthlete(sample);
+            appState.firebaseReference.child(sampleCoach.username).child("athletes").setValue(sampleCoach.getAthletes());
         }
     }
     public void delete(View view)
@@ -120,6 +124,9 @@ public class manageCoach extends AppCompatActivity
         {
             sample.removeCoach(coaches.get(i).getUsername());
             appState.firebaseReference.child(sample.username).child("coaches").setValue(sample.getCoaches());
+            sampleCoach = requests.get(i);
+            sampleCoach.removeAthlete(sample);
+            appState.firebaseReference.child(sampleCoach.username).child("athletes").setValue(sampleCoach.getAthletes());
         }
     }
 }
