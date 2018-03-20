@@ -123,7 +123,8 @@ public class MainActivity extends AppCompatActivity
                             //if password in database matches entered password
                             if (data.child(username).child("password").getValue().equals(password))
                             {
-                                User retrievedUser = data.getValue(User.class);
+                                User retrievedUser = data.child(username).getValue(User.class);
+
                                 update(retrievedUser);
                             }
                         }

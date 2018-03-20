@@ -34,6 +34,8 @@ public class UpdateUserTest
     public void testUsername()
     {
         test = "test";
+        ViewActions.closeSoftKeyboard();
+
         onView(withId(R.id.username_update)).perform(typeText(test), ViewActions.closeSoftKeyboard());
 
         onView(withId(R.id.username_update)).check(matches(withText(test)));
@@ -44,9 +46,11 @@ public class UpdateUserTest
     public void testEmail()
     {
         test = "test@test.com";
-        onView(withId(R.id.email)).perform(typeText(test), ViewActions.closeSoftKeyboard());
+        ViewActions.closeSoftKeyboard();
 
-        onView(withId(R.id.email)).check(matches(withText(test)));
+        onView(withId(R.id.email_update)).perform(typeText(test), ViewActions.closeSoftKeyboard());
+
+        onView(withId(R.id.email_update)).check(matches(withText(test)));
 
     }
 
@@ -54,9 +58,11 @@ public class UpdateUserTest
     public void testPassword()
     {
         test = "testP@ssword";
-        onView(withId(R.id.password)).perform(typeText(test), ViewActions.closeSoftKeyboard());
+        ViewActions.closeSoftKeyboard();
 
-        onView(withId(R.id.password)).check(matches(withText(test)));
+        onView(withId(R.id.password_update)).perform(typeText(test), ViewActions.closeSoftKeyboard());
+
+        onView(withId(R.id.password_update)).check(matches(withText(test)));
 
     }
 
@@ -64,6 +70,8 @@ public class UpdateUserTest
     public void testFirstName()
     {
         test = "first";
+        ViewActions.closeSoftKeyboard();
+
         onView(withId(R.id.first_name_update)).perform(typeText(test), ViewActions.closeSoftKeyboard());
 
         onView(withId(R.id.first_name_update)).check(matches(withText(test)));
@@ -74,6 +82,8 @@ public class UpdateUserTest
     public void testLastName()
     {
         test = "last";
+        ViewActions.closeSoftKeyboard();
+
         onView(withId(R.id.last_name_update)).perform(typeText(test), ViewActions.closeSoftKeyboard());
 
         onView(withId(R.id.last_name_update)).check(matches(withText(test)));
@@ -84,6 +94,8 @@ public class UpdateUserTest
     public void testDoB()
     {
         test = "1988/03/15";
+        ViewActions.closeSoftKeyboard();
+
         onView(withId(R.id.dob_update)).perform(typeText(test), ViewActions.closeSoftKeyboard());
 
         onView(withId(R.id.dob_update)).check(matches(withText(test)));
@@ -94,6 +106,8 @@ public class UpdateUserTest
     public void testHeight()
     {
         test = "150.1";
+        ViewActions.closeSoftKeyboard();
+
         onView(withId(R.id.height_update)).perform(typeText(test), ViewActions.closeSoftKeyboard());
 
         onView(withId(R.id.height_update)).check(matches(withText(test)));
@@ -104,6 +118,8 @@ public class UpdateUserTest
     public void testWeight()
     {
         test = "74.2";
+        ViewActions.closeSoftKeyboard();
+
         onView(withId(R.id.weight_update)).perform(typeText(test), ViewActions.closeSoftKeyboard());
 
         onView(withId(R.id.weight_update)).check(matches(withText(test)));

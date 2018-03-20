@@ -36,9 +36,6 @@ public class RegistrationTest
 {
 
 
-
-
-
     private String test;
     @Rule
     public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<MainActivity>(MainActivity.class)

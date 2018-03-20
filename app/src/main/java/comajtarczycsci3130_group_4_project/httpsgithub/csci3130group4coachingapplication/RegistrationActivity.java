@@ -48,7 +48,7 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class RegistrationActivity extends AppCompatActivity {
 
-    //MyApplicationData appState;
+    MyApplicationData appState;
     
     // UI references.
     private AutoCompleteTextView mEmailView;
@@ -66,17 +66,12 @@ public class RegistrationActivity extends AppCompatActivity {
     private static final String[] genderListItems = {"Male", "Female", "Prefer not to specify"};
 
 
-    //create database reference
-    final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference usersRef = database.getReference("users");
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-       // appState = (MyApplicationData)getApplicationContext();
+        appState = (MyApplicationData)getApplicationContext();
 
         setContentView(R.layout.activity_registration);
         // Set up the login form.
@@ -111,7 +106,9 @@ public class RegistrationActivity extends AppCompatActivity {
         mProgressView = findViewById(R.id.login_progress);
     }
 
-    //pulls user data from fields, creates User object, pushes into the database
+    /**
+     * pulls user data from fields, creates User object, pushes into the database
+     */
     private void registerUser() {
 
         // Store values at the time of the login attempt.
@@ -147,11 +144,10 @@ public class RegistrationActivity extends AppCompatActivity {
             public void onComplete(DatabaseError databaseError, DatabaseReference usersRef)
             {
 
-                Log.d("test", "test1");
 
                 if (databaseError != null)
                 {
-                    Log.d("test", "test2");
+                    Log.d("test", "failed insertion");
 
                     //Failed insertion
                 }
@@ -167,20 +163,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
         //create user object, push into database
         User newUser = new User(username, email, password, firstName, lastName, dob, height, weight, gender, role);
-        Log.d("test", "username:" + newUser.getUsername());
-        Log.d("test", "email:" + newUser.getEmail());
-        Log.d("test", "password:" + newUser.getPassword());
-        Log.d("test", "firstname:" + newUser.getFirstName());
-        Log.d("test", "lastname:" + newUser.getLastName());
-        Log.d("test", "dob:" + newUser.getdob());
-        Log.d("test", "height:" + newUser.getHeight());
-        Log.d("test", "weight:" + newUser.getWeight());
-        Log.d("test", "gender:" + newUser.getGender());
-        Log.d("test", "role:" + newUser.getRole());
 
-
-
-        usersRef.child(username).setValue(newUser, insertListener);
+        appState.userRef.child(username).setValue(newUser, insertListener);
 
     }
 
