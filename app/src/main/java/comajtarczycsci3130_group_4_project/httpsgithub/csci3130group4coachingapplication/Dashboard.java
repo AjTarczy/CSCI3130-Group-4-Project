@@ -7,8 +7,11 @@ import android.view.View;
 import android.widget.TextView;
 
 
-public class amainpage extends AppCompatActivity
+public class Dashboard extends AppCompatActivity
 {
+    Intent intent = getIntent();
+    MyApplicationData appData = (MyApplicationData)intent.getSerializableExtra("data");
+
     String information = "test";
 
     @Override
@@ -23,21 +26,25 @@ public class amainpage extends AppCompatActivity
     public void editProfile(View view)
     {
         Intent showEditProfile = new Intent(this, editProfile.class);
+        showEditProfile.putExtra("data", appData);
         startActivity(showEditProfile);
     }
     public void plans(View view)
     {
         Intent showPlans = new Intent(this, plans.class);
+        showPlans.putExtra("data", appData);
         startActivity(showPlans);
     }
     public void manageCoach(View view)
     {
         Intent showManageCoach = new Intent(this, manageCoach.class);
+        showManageCoach.putExtra("data", appData);
         startActivity(showManageCoach);
     }
     public void statistics(View view)
     {
-        Intent showStatistics = new Intent(this, Statistics.class);
+        Intent showStatistics = new Intent(this, StatisticsPage.class);
+        showStatistics.putExtra("data", appData);
         startActivity(showStatistics);
     }
 }

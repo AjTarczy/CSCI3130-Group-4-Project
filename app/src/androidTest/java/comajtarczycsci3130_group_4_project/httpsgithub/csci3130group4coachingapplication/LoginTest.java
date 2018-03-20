@@ -73,7 +73,7 @@ public class LoginTest
 
         onView(withId(R.id.login_button)).perform(click());
 
-        intended(hasComponent(amainpage.class.getName()));
+        intended(hasComponent(Dashboard.class.getName()));
 
 
     }

@@ -158,10 +158,11 @@ public class MainActivity extends AppCompatActivity
      */
     private void login(User user)
     {
-        Intent intent = new Intent(this, amainpage.class);
+        Intent intent = new Intent(this, Dashboard.class);
         intent.putExtra("user", user);
 
         startActivity(intent);
+
 
     }
 

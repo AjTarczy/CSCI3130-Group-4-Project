@@ -50,6 +50,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     MyApplicationData appState;
     
+
     // UI references.
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
