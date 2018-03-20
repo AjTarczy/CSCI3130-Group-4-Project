@@ -10,13 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".StatisticsPage"/>
-        <activity android:name=".amainpage"/>
-        <activity android:name=".Athletes">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".amainpage"/>
+        <activity android:name=".Athletes">
         </activity>
         <activity
             android:name=".RegistrationActivity"
@@ -27,7 +29,9 @@
         <activity android:name=".editProfile" />
         <activity android:name=".plans" />
         <activity android:name=".Statistics" />
-        <activity android:name=".manageCoach"></activity>
+        <activity android:name=".manageCoach">
+
+        </activity>
     </application>
 
 </manifest>
