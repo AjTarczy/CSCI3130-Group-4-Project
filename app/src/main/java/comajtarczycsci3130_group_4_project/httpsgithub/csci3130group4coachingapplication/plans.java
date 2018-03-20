@@ -6,12 +6,13 @@ import android.os.Bundle;
 
 public class plans extends AppCompatActivity {
 
-    Intent intent = getIntent();
-    MyApplicationData appData = (MyApplicationData)intent.getSerializableExtra("data");
+    MyApplicationData appState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.plans);
+        appState = (MyApplicationData)getApplicationContext();
+
     }
 }

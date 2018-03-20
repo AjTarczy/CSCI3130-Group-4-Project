@@ -6,12 +6,14 @@ import android.os.Bundle;
 
 public class manageCoach extends AppCompatActivity {
 
-    Intent intent = getIntent();
-    MyApplicationData appData = (MyApplicationData)intent.getSerializableExtra("data");
+    MyApplicationData appState;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manage_coach);
+        appState = (MyApplicationData)getApplicationContext();
+
     }
 }

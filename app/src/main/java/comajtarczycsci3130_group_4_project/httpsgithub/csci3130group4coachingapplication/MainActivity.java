@@ -38,11 +38,11 @@ public class MainActivity extends AppCompatActivity
 
         Button mLoginButton = findViewById(R.id.login_button);
         Button mRegisterButton = findViewById(R.id.register_button);
-        Button mUpdateButton = findViewById(R.id.update_button);
 
 
-
-        //set event listener for login button press
+        /**
+         * set event listener for login button press
+         */
         mLoginButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -74,61 +74,13 @@ public class MainActivity extends AppCompatActivity
                                 //if password in database matches entered password
                                 if (data.child(username).child("password").getValue().equals(password))
                                 {
-                                    User retrievedUser = data.getValue(User.class);
+                                    User retrievedUser = data.child(username).getValue(User.class);
+                                    Log.d("test", retrievedUser.getUsername());
+
                                     login(retrievedUser);
                                 }
                             }
                         }
-
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError)
-                    {
-
-                    }
-                });
-
-            }
-        });
-
-        //set event listener for login button press
-        mUpdateButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                mUsernameView = (EditText) findViewById(R.id.main_username_input);
-                mPasswordView = (EditText) findViewById(R.id.main_password);
-
-                //create database event listener to query database for user login info
-                localUserRef.addListenerForSingleValueEvent(new ValueEventListener()
-                {
-                    @Override
-                    public void onDataChange(DataSnapshot data)
-                    {
-
-
-                        String username = mUsernameView.getText().toString();
-                        String password = mPasswordView.getText().toString();
-
-                        //if username is blank
-                        if (username.equals(""))
-                        {
-                            return;
-                        }
-                        //if username is in the database
-                        if (data.child(username).exists())
-                        {
-
-                            //if password in database matches entered password
-                            if (data.child(username).child("password").getValue().equals(password))
-                            {
-                                User retrievedUser = data.child(username).getValue(User.class);
-
-                                update(retrievedUser);
-                            }
-                        }
-                    }
 
 
                     @Override
@@ -175,16 +127,5 @@ public class MainActivity extends AppCompatActivity
         Intent registrationIntent = new Intent(this, RegistrationActivity.class);
         startActivity(registrationIntent);
     }
-
-    private void update(User user)
-    {
-        Intent intent = new Intent(this, UpdateUser.class);
-        intent.putExtra("user", user);
-
-        startActivity(intent);
-
-    }
-
-
 
 }

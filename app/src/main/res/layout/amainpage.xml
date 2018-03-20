@@ -89,6 +89,16 @@
             android:layout_toEndOf="@+id/imageView"
             android:text="TextView" />
 
+        <Button
+            android:id="@+id/logout_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView"
+            android:layout_alignStart="@+id/button3"
+            android:layout_marginBottom="13dp"
+            android:layout_marginStart="23dp"
+            android:text="Logout" />
+
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

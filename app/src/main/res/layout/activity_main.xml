@@ -79,12 +79,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/registration_form"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/update_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/registration_form"
-        android:text="Update" />
+
 
 
 </android.support.constraint.ConstraintLayout>

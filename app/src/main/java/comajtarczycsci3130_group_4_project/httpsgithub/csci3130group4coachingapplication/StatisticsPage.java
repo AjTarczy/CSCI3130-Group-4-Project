@@ -20,14 +20,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 public class StatisticsPage extends AppCompatActivity {
 
-    Intent intent = getIntent();
-    MyApplicationData appData = (MyApplicationData)intent.getSerializableExtra("data");
-
-    private TextView tvTasksCompleted = (TextView) findViewById(R.id.tvTasksCompleted);
-    private TextView tvCaloriesBurned = (TextView) findViewById(R.id.tvCaloriesBurned);
-    private TextView tvDistanceTraveled = (TextView) findViewById(R.id.tvDistanceTraveled);
-    private TextView tvChangeInDistanceTraveled = (TextView) findViewById(R.id.tvChangeInDistanceTraveled);
-    private Spinner spinTimeMeasurement = (Spinner) findViewById(R.id.spinTimeMeasurement);
+    MyApplicationData appState;
+    private TextView tvTasksCompleted;
+    private TextView tvCaloriesBurned;
+    private TextView tvDistanceTraveled;
+    private TextView tvChangeInDistanceTraveled;
+    private Spinner spinTimeMeasurement;
 
 
     //create database reference
@@ -38,6 +36,14 @@ public class StatisticsPage extends AppCompatActivity {
         //required lines of code for the override
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats_page);
+        appState = (MyApplicationData)getApplicationContext();
+        tvTasksCompleted = (TextView) findViewById(R.id.tvTasksCompleted);
+        tvCaloriesBurned = (TextView) findViewById(R.id.tvCaloriesBurned);
+        tvDistanceTraveled = (TextView) findViewById(R.id.tvDistanceTraveled);
+        tvDistanceTraveled = (TextView) findViewById(R.id.tvDistanceTraveled);
+        tvChangeInDistanceTraveled = (TextView) findViewById(R.id.tvChangeInDistanceTraveled);
+        spinTimeMeasurement = (Spinner) findViewById(R.id.spinTimeMeasurement);
+
 
         setTasksCompleted("Today");
         setCaloriesBurned("Today");

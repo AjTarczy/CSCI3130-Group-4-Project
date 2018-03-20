@@ -4,15 +4,17 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 
 public class Dashboard extends AppCompatActivity
 {
-    Intent intent = getIntent();
-    MyApplicationData appData = (MyApplicationData)intent.getSerializableExtra("data");
+    MyApplicationData appState;
 
-    String information = "test";
+    User currentUser;
+
+    String welcome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -20,31 +22,62 @@ public class Dashboard extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.amainpage);
         TextView text = findViewById(R.id.textView);
-        text.setText(information);
+        appState = (MyApplicationData)getApplicationContext();
+        currentUser = (User)getIntent().getSerializableExtra("user");
+        welcome = "Welcome " + currentUser.getUsername();
+        text.setText(welcome);
+
+        Button mLogoutButton = findViewById(R.id.logout_button);
+
+        mLogoutButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                finish();
+            }
+        });
 
     }
+
+    /**
+     * launch user update page
+     * @param view
+     */
     public void editProfile(View view)
     {
-        Intent showEditProfile = new Intent(this, editProfile.class);
-        showEditProfile.putExtra("data", appData);
-        startActivity(showEditProfile);
+        Intent updateUser = new Intent(this, UpdateUser.class);
+        updateUser.putExtra("user", currentUser);
+        startActivity(updateUser);
     }
+
+    /**
+     * launch user plans page
+     * @param view
+     */
     public void plans(View view)
     {
         Intent showPlans = new Intent(this, plans.class);
-        showPlans.putExtra("data", appData);
         startActivity(showPlans);
     }
+
+    /**
+     * launch manage coach page
+     * @param view
+     */
     public void manageCoach(View view)
     {
         Intent showManageCoach = new Intent(this, manageCoach.class);
-        showManageCoach.putExtra("data", appData);
         startActivity(showManageCoach);
     }
+
+    /**
+     * launch statistics page
+     * @param view
+     */
     public void statistics(View view)
     {
         Intent showStatistics = new Intent(this, StatisticsPage.class);
-        showStatistics.putExtra("data", appData);
         startActivity(showStatistics);
     }
 }
