@@ -30,17 +30,6 @@ public class UpdateUserTest
     @Rule
     public ActivityTestRule<UpdateUser> mActivityRule = new ActivityTestRule<>(UpdateUser.class);
 
-    @Test
-    public void testUsername()
-    {
-        test = "test";
-        ViewActions.closeSoftKeyboard();
-
-        onView(withId(R.id.username_update)).perform(typeText(test), ViewActions.closeSoftKeyboard());
-
-        onView(withId(R.id.username_update)).check(matches(withText(test)));
-
-    }
 
     @Test
     public void testEmail()
@@ -141,34 +130,6 @@ public class UpdateUserTest
 
     }
 
-    @Test
-    public void testRole()
-    {
-        test = "Athlete";
 
-        ViewActions.closeSoftKeyboard();
-
-        onView(withId(R.id.role_update)).check(matches(withText(test)));
-
-        test = "Coach";
-
-        onView(withId(R.id.role_update)).perform(click());
-
-        onView(withId(R.id.role_update)).check(matches(withText(test)));
-
-
-
-
-    }
-
-    @Test
-    public void testRegister()
-    {
-        ViewActions.closeSoftKeyboard();
-
-        onView(withId(R.id.update_button)).perform(click());
-
-
-    }
 
 }
