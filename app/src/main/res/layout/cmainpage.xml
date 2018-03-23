@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication.cmainpage">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.lizzie.csci3130groupproject.MainActivity"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="363dp">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/button_one"
+            android:onClick="editProfile"
+            android:text="Edit Profile" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/button"
+            android:layout_alignBottom="@+id/button"
+            android:layout_marginStart="11dp"
+            android:layout_toEndOf="@+id/button"
+            android:background="@drawable/button_three"
+            android:onClick="manageAthlete"
+            android:text="Manage Athlete"
+            tools:ignore="OnClick" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="34dp"
+            android:background="@drawable/button_four"
+            android:onClick="listOfAthlete"
+            android:text="List of Athletes" />
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_above="@+id/button"
+            android:layout_alignStart="@+id/button"
+            android:layout_marginBottom="16dp"
+            android:src="@mipmap/ic_launcher_round"
+            tools:layout_editor_absoluteX="154dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_alignEnd="@+id/button3"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_marginStart="21dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:text="TextView" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

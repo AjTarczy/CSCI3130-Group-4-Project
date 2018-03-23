@@ -99,7 +99,6 @@
         android:layout_marginTop="8dp"
         android:text="Reject"
         android:onClick="reject"
-        android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/requestReject2" />
 
@@ -110,15 +109,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Coaches"
+        android:text="Athletes"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:text="Requests\n\nAthlete List"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/request3" />
 
     <TextView
-        android:id="@+id/coachInfo1"
+        android:id="@+id/athleteInfo1"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
@@ -128,7 +126,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
-        android:id="@+id/coachDelete1"
+        android:id="@+id/athleteDelete1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -139,21 +137,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
-        android:id="@+id/coachInfo2"
+        android:id="@+id/athleteInfo2"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coachInfo1" />
-
-    <Button
-        android:id="@+id/coachDelete2"
         app:layout_constraintTop_toBottomOf="@+id/athleteInfo1" />
 
     <Button
-        android:id="@+id/athleteManage2"
+        android:id="@+id/athleteDelete2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -161,10 +155,10 @@
         android:text="Delete"
         android:onClick="delete"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coachDelete1" />
+        app:layout_constraintTop_toBottomOf="@+id/athleteDelete1" />
 
     <Button
-        android:id="@+id/coachDelete3"
+        android:id="@+id/athleteDelete3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -172,10 +166,10 @@
         android:text="Delete"
         android:onClick="delete"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coachDelete2" />
+        app:layout_constraintTop_toBottomOf="@+id/athleteDelete2" />
 
     <Button
-        android:id="@+id/coachDelete5"
+        android:id="@+id/athleteDelete5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -183,10 +177,10 @@
         android:text="Delete"
         android:onClick="delete"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coachDelete4" />
+        app:layout_constraintTop_toBottomOf="@+id/athleteDelete4" />
 
     <Button
-        android:id="@+id/coachDelete4"
+        android:id="@+id/athleteDelete4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -194,37 +188,37 @@
         android:text="Delete"
         android:onClick="delete"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coachDelete3" />
+        app:layout_constraintTop_toBottomOf="@+id/athleteDelete3" />
 
     <TextView
-        android:id="@+id/coachInfo3"
+        android:id="@+id/athleteInfo3"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coachInfo2" />
+        app:layout_constraintTop_toBottomOf="@+id/athleteInfo2" />
 
     <TextView
-        android:id="@+id/coachInfo4"
+        android:id="@+id/athleteInfo4"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coachInfo3" />
+        app:layout_constraintTop_toBottomOf="@+id/athleteInfo3" />
 
     <TextView
-        android:id="@+id/coachInfo5"
+        android:id="@+id/athleteInfo5"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coachInfo4" />
+        app:layout_constraintTop_toBottomOf="@+id/athleteInfo4" />
 
     <TextView
         android:id="@+id/textView3"

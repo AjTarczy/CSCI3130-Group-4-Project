@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,18 +13,33 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".StatisticsPage"/>
+        <activity android:name=".amainpage"/>
+        <activity android:name=".cmainpage" android:exported="true"/>
+        <activity android:name=".Athletes">
         <activity android:name=".StatisticsPage" />
         <activity android:name=".Dashboard" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".RegistrationActivity"
+            android:label="@string/title_activity_registration" />
+        <activity
+            android:name=".LoggedInActivity"
+            android:label="@string/title_activity_logged_in"/>
+        <activity android:name=".editProfile" android:exported="true"/>
+        <activity android:name=".plans" />
+        <activity android:name=".Statistics" />
+        <activity android:name=".ListOfAthletes" android:exported="true"/>
+        <activity android:name=".manageAthlete" android:exported="true"/>
+        <activity android:name=".manageCoach"/>
+    </application>
             android:label="@string/title_activity_registration"
             android:parentActivityName=".MainActivity" /><![CDATA[
         />
