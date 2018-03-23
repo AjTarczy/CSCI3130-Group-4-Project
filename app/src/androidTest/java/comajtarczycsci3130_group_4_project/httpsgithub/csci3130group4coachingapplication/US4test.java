@@ -25,8 +25,8 @@ public class US4test {
 
 
     @Rule
-    public IntentsTestRule<amainpage> intentsTestRule =
-            new IntentsTestRule<>(amainpage.class);
+    public IntentsTestRule<Dashboard> intentsTestRule =
+            new IntentsTestRule<>(Dashboard.class);
 
 
     @Test

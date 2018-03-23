@@ -1,8 +1,14 @@
 package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication;
 
+import android.content.Context;
+import android.content.Intent;
+import android.support.test.InstrumentationRegistry;
 import android.support.test.espresso.action.ViewActions;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+
+import com.google.firebase.database.FirebaseDatabase;
+
 import static android.support.test.espresso.Espresso.*;
 import static android.support.test.espresso.matcher.ViewMatchers.*;
 import static android.support.test.espresso.action.ViewActions.*;
@@ -15,6 +21,7 @@ import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.instanceOf;
 
 
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,12 +30,26 @@ import org.junit.runner.RunWith;
  * Created by robertnickerson on 2018-02-20.
  */
 
+
 @RunWith(AndroidJUnit4.class)
 public class RegistrationTest
 {
+
+
     private String test;
     @Rule
-    public ActivityTestRule<RegistrationActivity> mActivityRule = new ActivityTestRule<>(RegistrationActivity.class);
+    public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<MainActivity>(MainActivity.class)
+    {
+
+
+    };
+
+    @Before
+    public void startRegister()
+    {
+        onView(withId(R.id.register_button)).perform(click());
+
+    }
 
     @Test
     public void testUsername()
@@ -93,6 +114,8 @@ public class RegistrationTest
     @Test
     public void testHeight()
     {
+        ViewActions.closeSoftKeyboard();
+
         test = "150.1";
         onView(withId(R.id.height_input)).perform(typeText(test), ViewActions.closeSoftKeyboard());
 
@@ -103,6 +126,8 @@ public class RegistrationTest
     @Test
     public void testWeight()
     {
+        ViewActions.closeSoftKeyboard();
+
         test = "74.2";
         onView(withId(R.id.weight_input)).perform(typeText(test), ViewActions.closeSoftKeyboard());
 
@@ -110,49 +135,5 @@ public class RegistrationTest
 
     }
 
-    @Test
-    public void testGender()
-    {
-        test = "Male";
-
-        ViewActions.closeSoftKeyboard();
-
-        onView(withId(R.id.gender_input)).perform(click());
-
-        onData(allOf(is(instanceOf(String.class)), is(test))).perform(click());
-
-        onView(withId(R.id.gender_input)).check(matches(withSpinnerText(containsString(test))));
-
-    }
-
-    @Test
-    public void testRole()
-    {
-        test = "Athlete";
-
-        ViewActions.closeSoftKeyboard();
-
-        onView(withId(R.id.role_switch)).check(matches(withText(test)));
-
-        test = "Coach";
-
-        onView(withId(R.id.role_switch)).perform(click());
-
-        onView(withId(R.id.role_switch)).check(matches(withText(test)));
-
-
-
-
-    }
-
-    @Test
-    public void testRegister()
-    {
-         ViewActions.closeSoftKeyboard();
-
-        onView(withId(R.id.register_button)).perform(click());
-
-
-    }
 
 }

@@ -5,6 +5,8 @@ import android.app.Application;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.Serializable;
+
 /**
  * Created by Gashin on 3/9/2018.
  */
@@ -12,7 +14,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MyApplicationData extends Application {
 
-    public DatabaseReference firebaseReference;
-    public FirebaseDatabase firebaseDBInstance;
+    public  FirebaseDatabase database;
+    public  DatabaseReference userRef;
+    public  DatabaseReference statRef;
+    public  User currentUser;
 
 }

@@ -3,8 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
         android:allowBackup="true"
+        android:name=".MyApplicationData"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -15,9 +19,11 @@
         <activity android:name=".amainpage"/>
         <activity android:name=".cmainpage" android:exported="true"/>
         <activity android:name=".Athletes">
+        <activity android:name=".StatisticsPage" />
+        <activity android:name=".Dashboard" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -34,5 +40,21 @@
         <activity android:name=".manageAthlete" android:exported="true"/>
         <activity android:name=".manageCoach"/>
     </application>
+            android:label="@string/title_activity_registration"
+            android:parentActivityName=".MainActivity" /><![CDATA[
+        />
+        ]]>
+        <activity android:name=".editProfile" />
+        <activity android:name=".plans" />
+        <activity android:name=".Statistics" />
+        <activity android:name=".manageCoach" />
+        <activity android:name=".Athletes" />
 
-</manifest>
+        <activity
+            android:name=".UpdateUser"
+            android:label="@string/title_activity_update_user"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+</application>
+
+    </manifest>

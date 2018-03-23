@@ -5,6 +5,7 @@ package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingap
  */
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -19,11 +20,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 public class StatisticsPage extends AppCompatActivity {
 
-    private TextView tvTasksCompleted = (TextView) findViewById(R.id.tvTasksCompleted);
-    private TextView tvCaloriesBurned = (TextView) findViewById(R.id.tvCaloriesBurned);
-    private TextView tvDistanceTraveled = (TextView) findViewById(R.id.tvDistanceTraveled);
-    private TextView tvChangeInDistanceTraveled = (TextView) findViewById(R.id.tvChangeInDistanceTraveled);
-    private Spinner spinTimeMeasurement = (Spinner) findViewById(R.id.spinTimeMeasurement);
+    MyApplicationData appState;
+    private TextView tvTasksCompleted;
+    private TextView tvCaloriesBurned;
+    private TextView tvDistanceTraveled;
+    private TextView tvChangeInDistanceTraveled;
+    private Spinner spinTimeMeasurement;
 
 
     //create database reference
@@ -34,6 +36,14 @@ public class StatisticsPage extends AppCompatActivity {
         //required lines of code for the override
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats_page);
+        appState = (MyApplicationData)getApplicationContext();
+        tvTasksCompleted = (TextView) findViewById(R.id.tvTasksCompleted);
+        tvCaloriesBurned = (TextView) findViewById(R.id.tvCaloriesBurned);
+        tvDistanceTraveled = (TextView) findViewById(R.id.tvDistanceTraveled);
+        tvDistanceTraveled = (TextView) findViewById(R.id.tvDistanceTraveled);
+        tvChangeInDistanceTraveled = (TextView) findViewById(R.id.tvChangeInDistanceTraveled);
+        spinTimeMeasurement = (Spinner) findViewById(R.id.spinTimeMeasurement);
+
 
         setTasksCompleted("Today");
         setCaloriesBurned("Today");
@@ -109,8 +119,8 @@ public class StatisticsPage extends AppCompatActivity {
             ldubConstant = 20.4022;
         }
 
-        double result = (lintAge * ldubAgeConst + ldubWeight * ldubWeightConst + ldubHeartRateConst -
-                ldubConstant) * (lintTimeSpentExercising / ldubTimeSpentExercisingConst);
+        double result = Math.round(((lintAge * ldubAgeConst) + (ldubWeight * ldubWeightConst) + (ldubHeartRateConst -
+                ldubConstant)) * (lintTimeSpentExercising / ldubTimeSpentExercisingConst)*100.0)/100.0;
 
         return result;
     }

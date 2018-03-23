@@ -15,6 +15,8 @@ public class manageCoach extends AppCompatActivity
     private ArrayList<Coach> requests=sample.getRequests();
     private ArrayList<Coach> coaches=sample.getCoaches();
     private MyApplicationData appState;
+    MyApplicationData appState;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -128,5 +130,6 @@ public class manageCoach extends AppCompatActivity
             sampleCoach.removeAthlete(sample);
             appState.firebaseReference.child(sampleCoach.username).child("athletes").setValue(sampleCoach.getAthletes());
         }
+        appState = (MyApplicationData)getApplicationContext();
     }
 }
