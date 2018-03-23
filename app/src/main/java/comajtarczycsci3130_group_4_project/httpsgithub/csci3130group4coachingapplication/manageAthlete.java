@@ -8,20 +8,17 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class manageCoach extends AppCompatActivity
+public class manageAthlete extends AppCompatActivity
 {
-    private Athlete sample=new Athlete();
-    private Coach sampleCoach=new Coach();
-    private ArrayList<Coach> requests=sample.getRequests();
-    private ArrayList<Coach> coaches=sample.getCoaches();
+    private Coach sample=new Coach();
+    private ArrayList<Athlete> requests=sample.getRequests();
+    private ArrayList<Athlete> athletes=sample.getAthletes();
     private MyApplicationData appState;
-    MyApplicationData appState;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.manage_coach);
+        setContentView(R.layout.manage_athletes);
 
 
         String textToShow="sampleee";
@@ -45,7 +42,7 @@ public class manageCoach extends AppCompatActivity
 //            else{
 //                textToShow="sampleee";
 //            }
-            int id = getResources().getIdentifier("coachInfo"+(i+1), "id", getPackageName());
+            int id = getResources().getIdentifier("athleteInfo"+(i+1), "id", getPackageName());
             TextView text = findViewById(id);
             text.setText(textToShow);
 
@@ -91,14 +88,10 @@ public class manageCoach extends AppCompatActivity
                 i=2;
                 break;
         }
-        if(requests.get(i)!=null)
-        {
+        if(requests.get(i)!=null){
             sample.AcceptRequest(requests.get(i));
             appState.firebaseReference.child(sample.username).child("Requests").setValue(sample.getRequests());
-            appState.firebaseReference.child(sample.username).child("coaches").setValue(sample.getCoaches());
-            sampleCoach = requests.get(i);
-            sampleCoach.addAthlete(sample);
-            appState.firebaseReference.child(sampleCoach.username).child("athletes").setValue(sampleCoach.getAthletes());
+            appState.firebaseReference.child(sample.username).child("athletes").setValue(sample.getAthletes());
         }
     }
     public void delete(View view)
@@ -122,14 +115,10 @@ public class manageCoach extends AppCompatActivity
                 i=4;
                 break;
         }
-        if(coaches.get(i)!=null)
+        if(athletes.get(i)!=null)
         {
-            sample.removeCoach(coaches.get(i).getUsername());
-            appState.firebaseReference.child(sample.username).child("coaches").setValue(sample.getCoaches());
-            sampleCoach = requests.get(i);
-            sampleCoach.removeAthlete(sample);
-            appState.firebaseReference.child(sampleCoach.username).child("athletes").setValue(sampleCoach.getAthletes());
+            sample.removeAthlete(athletes.get(i));
+            appState.firebaseReference.child(sample.username).child("athletes").setValue(sample.getAthletes());
         }
-        appState = (MyApplicationData)getApplicationContext();
     }
 }

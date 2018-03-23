@@ -11,7 +11,7 @@ public class Athlete extends User
 {
     private ArrayList<Activity> activities = new ArrayList<Activity>();
     private ArrayList<Coach> coaches = new ArrayList<Coach>();
-
+    private ArrayList<Coach> Requests;
 
     public Athlete()
     {
@@ -41,6 +41,41 @@ public class Athlete extends User
     public ArrayList<Activity> getActivities()
     {
         return activities;
+    }
+
+
+    /**
+     * return this athelete list of requests
+     * @return
+     */
+
+    public ArrayList<Coach> getRequests()
+    {
+        return Requests;
+    }
+
+
+    public void IgnoreRequest(Coach coach)
+    {
+        for (int i = 0; i < Requests.size(); i++)
+        {
+            if (coach.getUsername().equals(Requests.get(i).getUsername()))
+            {
+                Requests.remove(i);
+            }
+        }
+    }
+
+    public void AcceptRequest(Coach coach)
+    {
+        for (int i = 0; i < Requests.size(); i++)
+        {
+            if (coach.getUsername().equals(Requests.get(i).getUsername()))
+            {
+                coaches.add(coach);
+                Requests.remove(i);
+            }
+        }
     }
 
     /**
