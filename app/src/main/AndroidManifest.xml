@@ -38,6 +38,7 @@
             android:name=".UpdateUser"
             android:label="@string/title_activity_update_user"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-    </application>
 
-</manifest>
+</application>
+
+    </manifest>

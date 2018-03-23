@@ -26,7 +26,7 @@ public class CoachUnitTest
     {
         testAthlete.setUsername("test");
         testCoach.addAthlete(testAthlete);
-        testCoach.removeAthlete("test");
+        testCoach.removeAthlete(testAthlete);
 
         assertFalse(testCoach.getAthletes().contains(testAthlete));
     }

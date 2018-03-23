@@ -119,8 +119,8 @@ public class StatisticsPage extends AppCompatActivity {
             ldubConstant = 20.4022;
         }
 
-        double result = (lintAge * ldubAgeConst + ldubWeight * ldubWeightConst + ldubHeartRateConst -
-                ldubConstant) * (lintTimeSpentExercising / ldubTimeSpentExercisingConst);
+        double result = Math.round(((lintAge * ldubAgeConst) + (ldubWeight * ldubWeightConst) + (ldubHeartRateConst -
+                ldubConstant)) * (lintTimeSpentExercising / ldubTimeSpentExercisingConst)*100.0)/100.0;
 
         return result;
     }
