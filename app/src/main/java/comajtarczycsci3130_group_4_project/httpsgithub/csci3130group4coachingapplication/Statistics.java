@@ -5,9 +5,14 @@ import android.os.Bundle;
 
 public class Statistics extends AppCompatActivity {
 
+    MyApplicationData appState;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.statistics);
+        appState = (MyApplicationData)getApplicationContext();
+
     }
 }
