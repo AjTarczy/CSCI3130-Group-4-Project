@@ -17,6 +17,12 @@ public class Coach extends User
 
     }
 
+    public Coach(String username, String email, String password, String firstName, String lastName, String dob, double height, double weight, String gender, String role)
+    {
+        super(username, email, password, firstName, lastName, dob, height, weight, gender, role);
+
+    }
+
     /**
      * return this coaches list of athletes
      * @return
