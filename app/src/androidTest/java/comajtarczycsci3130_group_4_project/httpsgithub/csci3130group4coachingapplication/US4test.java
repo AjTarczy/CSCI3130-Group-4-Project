@@ -44,7 +44,7 @@ public class US4test {
     @Test
     public void Button3_IsWorking() {
         onView(withId(R.id.button3)).perform(click());
-        intended(hasComponent(manageCoach.class.getName()));
+        intended(hasComponent(manageAthlete.class.getName()));
     }
 
     @Test

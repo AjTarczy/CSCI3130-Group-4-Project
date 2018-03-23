@@ -27,6 +27,9 @@
         <activity android:name=".editProfile" />
         <activity android:name=".plans" />
         <activity android:name=".Statistics" />
+        <activity android:name=".manageAthlete"
+            android:exported="true">
+        </activity>
         <activity android:name=".manageCoach">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
