@@ -40,9 +40,18 @@ public class plans extends AppCompatActivity {
             @Override
             public void onItemClick( AdapterView<?> parent, View view, int position, long id ) {
                 Activity act = (Activity) firebaseAdapter.getItem(position);
-                //showDetailView(act);
+                showDetailView(act);
             }
         });
+    }
+    private void showDetailView(Activity act)
+    {
+        /**
+         * method to go to detail view
+         */
+        //Intent intent = new Intent(this, DetailViewActivity.class);
+        //intent.putExtra("Activity", act);
+        //startActivity(intent);
     }
 
 }
