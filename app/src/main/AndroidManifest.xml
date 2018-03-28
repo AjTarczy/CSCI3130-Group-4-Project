@@ -16,10 +16,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".StatisticsPage"/>
-        <activity android:name=".amainpage"/>
         <activity android:name=".cmainpage" android:exported="true"/>
-        <activity android:name=".Athletes">
-        <activity android:name=".StatisticsPage" />
+        <activity android:name=".Athletes"/>
         <activity android:name=".Dashboard" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -30,31 +28,18 @@
         <activity
             android:name=".RegistrationActivity"
             android:label="@string/title_activity_registration" />
-        <activity
-            android:name=".LoggedInActivity"
-            android:label="@string/title_activity_logged_in"/>
         <activity android:name=".editProfile" android:exported="true"/>
         <activity android:name=".plans" />
         <activity android:name=".Statistics" />
         <activity android:name=".ListOfAthletes" android:exported="true"/>
         <activity android:name=".manageAthlete" android:exported="true"/>
-        <activity android:name=".manageCoach"/>
-    </application>
-            android:label="@string/title_activity_registration"
-            android:parentActivityName=".MainActivity" /><![CDATA[
-        />
-        ]]>
-        <activity android:name=".editProfile" />
-        <activity android:name=".plans" />
-        <activity android:name=".Statistics" />
-        <activity android:name=".manageCoach" />
-        <activity android:name=".Athletes" />
+        <activity android:name=".manageCoach" android:exported="true"/>
 
         <activity
             android:name=".UpdateUser"
             android:label="@string/title_activity_update_user"
             android:theme="@style/AppTheme.NoActionBar"></activity>
 
-</application>
+    </application>
 
-    </manifest>
+</manifest>
