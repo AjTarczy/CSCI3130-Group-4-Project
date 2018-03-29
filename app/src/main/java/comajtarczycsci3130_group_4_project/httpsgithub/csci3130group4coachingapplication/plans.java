@@ -7,31 +7,39 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.firebase.ui.database.FirebaseListAdapter;
+import com.firebase.ui.database.FirebaseListOptions;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class plans extends AppCompatActivity {
 
     MyApplicationData appState;
     private ListView ActivityListView;
-    private FirebaseListAdapter<Activity> firebaseAdapter;
+    private FirebaseListAdapter<User> firebaseAdapter;
+
 
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.plans);
         appState = (MyApplicationData) getApplicationContext();
+        appState.database = FirebaseDatabase.getInstance();
+        appState.userRef = appState.database.getReference("users");
 
+        FirebaseListOptions<User> options=new FirebaseListOptions.Builder<User>()
+                .setQuery(appState.userRef, User.class)
+                .setLayout(android.R.layout.simple_list_item_1)
+                .setLifecycleOwner(this)
+                .build();
         ActivityListView = (ListView) findViewById(R.id.listView);
 
-
         //Set up the List View
-        firebaseAdapter = new FirebaseListAdapter<Activity>(this, Activity.class,
-                android.R.layout.simple_list_item_1, appState.userRef) {
+        firebaseAdapter = new FirebaseListAdapter<User>(options) {
             @Override
-            protected void populateView( View v, Activity model, int position ) {
+            protected void populateView( View v, User model, int position ) {
                 TextView ActivityName = (TextView) v.findViewById(android.R.id.text1);
-                ActivityName.setText(model.getDescription() + "%n" + model.getDate());
+                //ActivityName.setText(model.getDescription() + "%n" + model.getDate());
+                ActivityName.setText(model.getUsername());
             }
         };
         ActivityListView.setAdapter(firebaseAdapter);
@@ -39,12 +47,12 @@ public class plans extends AppCompatActivity {
             // onItemClick method is called everytime a user clicks an item on the list
             @Override
             public void onItemClick( AdapterView<?> parent, View view, int position, long id ) {
-                Activity act = (Activity) firebaseAdapter.getItem(position);
+                User act = (User) firebaseAdapter.getItem(position);
                 showDetailView(act);
             }
         });
     }
-    private void showDetailView(Activity act)
+    private void showDetailView(User act)
     {
         /**
          * method to go to detail view
