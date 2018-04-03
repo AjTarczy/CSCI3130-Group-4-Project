@@ -7,7 +7,7 @@ package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingap
 
 public class Activity
 {
-    int ID;
+    private int ID;
     private boolean completed;
     private String description;
     private String date;

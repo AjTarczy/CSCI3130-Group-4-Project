@@ -58,6 +58,7 @@ public class Dashboard extends AppCompatActivity
     public void plans(View view)
     {
         Intent showPlans = new Intent(this, plans.class);
+        showPlans.putExtra("user", currentUser);
         startActivity(showPlans);
     }
 
