@@ -126,17 +126,14 @@
                 android:spinnerMode="dropdown"/>
 
 
-            <Switch
+            <TextView
                 android:id="@+id/role_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:showText="true"
-                android:checked="true"
-                android:gravity="left"
-                android:splitTrack="true"
-                android:text="User Role"
-                android:textOff="Athlete"
-                android:textOn="Coach"/>
+                android:ems="10"
+                android:hint="Role" />
+
+
 
             <Button
                 android:id="@+id/update_user_button"

@@ -13,6 +13,17 @@ public class Athlete extends User
     private ArrayList<Coach> coaches = new ArrayList<Coach>();
     private ArrayList<Coach> Requests;
 
+    public Athlete()
+    {
+
+    }
+
+    public Athlete(String username, String email, String password, String firstName, String lastName, String dob, double height, double weight, String gender, String role)
+    {
+        super(username, email, password, firstName, lastName, dob, height, weight, gender, role);
+    }
+
+
     /**
      * add an Activity object to the athlete's list of activities
      * @param activity

@@ -55,32 +55,36 @@ public class MainActivity extends AppCompatActivity
                 localUserRef.addListenerForSingleValueEvent(new ValueEventListener()
                     {
                     @Override
-                    public void onDataChange(DataSnapshot data)
-                    {
+                    public void onDataChange(DataSnapshot data) {
 
 
                         String username = mUsernameView.getText().toString();
                         String password = mPasswordView.getText().toString();
 
                         //if username is blank
-                        if (username.equals(""))
-                        {
+                        if (username.equals("")) {
                             return;
                         }
-                            //if username is in the database
-                            if (data.child(username).exists())
-                            {
+                        //if username is in the database
+                        if (data.child("coaches").child(username).exists()) {
 
-                                //if password in database matches entered password
-                                if (data.child(username).child("password").getValue().equals(password))
-                                {
-                                    User retrievedUser = data.child(username).getValue(User.class);
-                                    Log.d("test", retrievedUser.getUsername());
+                            //if password in database matches entered password
+                            if (data.child("coaches").child(username).child("password").getValue().equals(password)) {
 
-                                    login(retrievedUser);
-                                }
+                                Coach retrievedUser = data.child("coaches").child(username).getValue(Coach.class);
+
+                                login(retrievedUser);
                             }
+
+                        } else if (data.child("athletes").child(username).exists()) {
+                            if (data.child("athletes").child(username).child("password").getValue().equals(password)) {
+                                Athlete retrievedUser = data.child("athletes").child(username).getValue(Athlete.class);
+
+                                login(retrievedUser);
+                            }
+
                         }
+                    };
 
 
                     @Override

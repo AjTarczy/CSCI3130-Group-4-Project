@@ -163,9 +163,23 @@ public class RegistrationActivity extends AppCompatActivity {
         };
 
         //create user object, push into database
-        User newUser = new User(username, email, password, firstName, lastName, dob, height, weight, gender, role);
 
-        appState.userRef.child(username).setValue(newUser, insertListener);
+
+
+        if (role.equals("Coach"))
+        {
+            Coach newUser = new Coach(username, email, password, firstName, lastName, dob, height, weight, gender, role);
+            appState.userRef.child("coaches").child(username).setValue(newUser, insertListener);
+
+        }
+
+        else if (role.equals("Athlete"))
+        {
+            Athlete newUser = new Athlete(username, email, password, firstName, lastName, dob, height, weight, gender, role);
+            appState.userRef.child("athletes").child(username).setValue(newUser, insertListener);
+
+        }
+
 
     }
 

@@ -21,6 +21,10 @@ import com.google.firebase.database.DatabaseReference;
 
 import java.util.List;
 
+/**
+ * Handles updating the currently logged in user details
+ * Username and user role are locked and unable to be updated
+ */
 public class UpdateUser extends AppCompatActivity {
 
     MyApplicationData appState;
@@ -37,7 +41,7 @@ public class UpdateUser extends AppCompatActivity {
     private EditText mHeightView;
     private EditText mWeightView;
     private Spinner mGenderView;
-    private Switch mRoleView;
+    private TextView mRoleView;
     private static final String[] genderListItems = {"Male", "Female", "Prefer not to specify"};
     User selectedUser;
 
@@ -62,7 +66,7 @@ public class UpdateUser extends AppCompatActivity {
         mHeightView = (EditText) findViewById(R.id.height_update);
         mWeightView = (EditText) findViewById(R.id.weight_update);
         mGenderView = (Spinner) findViewById(R.id.gender_update);
-        mRoleView = (Switch) findViewById(R.id.role_update);
+        mRoleView = (TextView) findViewById(R.id.role_update);
         mPasswordView = (EditText) findViewById(R.id.password_update);
 
         ArrayAdapter<String> genderAdapter = new ArrayAdapter<String>(UpdateUser.this,
@@ -85,6 +89,7 @@ public class UpdateUser extends AppCompatActivity {
             String weight = String.valueOf(selectedUser.getWeight());
             mWeightView.setText(weight);
             mDoBView.setText(selectedUser.getdob());
+            mRoleView.setText(selectedUser.getRole());
 
             String gender = selectedUser.getGender();
 
@@ -93,17 +98,8 @@ public class UpdateUser extends AppCompatActivity {
                 mGenderView.setSelection(spinnerPosition);
             }
 
-            String role = selectedUser.getRole();
 
-            if (role.equals("Coach"))
-            {
-                mRoleView.setChecked(true);
-            }
 
-            else
-            {
-                mRoleView.setChecked(false);
-            }
 
         }
 
@@ -134,19 +130,9 @@ public class UpdateUser extends AppCompatActivity {
         double height = Double.parseDouble(mHeightView.getText().toString());
         double weight = Double.parseDouble(mWeightView.getText().toString());
         String gender = mGenderView.getSelectedItem().toString();
-        String role;
+        String role = mRoleView.getText().toString();
 
-        //if role switch is in "on" position
-        if (mRoleView.isChecked())
-        {
-            role = mRoleView.getTextOn().toString();
-        }
 
-        //if role switch is in "off" position
-        else
-        {
-            role = mRoleView.getTextOff().toString();
-        }
 
         //check if insertion is successful or not
         DatabaseReference.CompletionListener insertListener = new DatabaseReference.CompletionListener()
@@ -169,9 +155,19 @@ public class UpdateUser extends AppCompatActivity {
             }
         };
 
-        //create user object, push into database
-        User newUser = new User(username, email, password, firstName, lastName, dob, height, weight, gender, role);
-        appState.userRef.child(username).setValue(newUser, insertListener);
+        if (role.equals("Coach"))
+        {
+            Coach newUser = new Coach(username, email, password, firstName, lastName, dob, height, weight, gender, role);
+            appState.userRef.child("coaches").child(username).setValue(newUser, insertListener);
+
+        }
+
+        else if (role.equals("Athlete"))
+        {
+            Athlete newUser = new Athlete(username, email, password, firstName, lastName, dob, height, weight, gender, role);
+            appState.userRef.child("athletes").child(username).setValue(newUser, insertListener);
+
+        }
 
     }
 
