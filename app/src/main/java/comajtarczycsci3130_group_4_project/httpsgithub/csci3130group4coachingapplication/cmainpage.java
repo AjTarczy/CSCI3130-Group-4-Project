@@ -7,11 +7,16 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class cmainpage extends AppCompatActivity
 {
-    String information = "test";
+    MyApplicationData appState;
+
+    User currentUser;
+
+    String welcome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -19,13 +24,29 @@ public class cmainpage extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cmainpage);
         TextView text = findViewById(R.id.textView);
-        text.setText(information);
+        appState = (MyApplicationData)getApplicationContext();
+        currentUser = (User)getIntent().getSerializableExtra("user");
+        welcome = "Welcome " + currentUser.getUsername();
+        text.setText(welcome);
+
+        Button mLogoutButton = findViewById(R.id.logout_button);
+
+        mLogoutButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                finish();
+            }
+        });
 
     }
+
     public void editProfile(View view)
     {
-        Intent showEditProfile = new Intent(this, editProfile.class);
-        startActivity(showEditProfile);
+        Intent updateUser = new Intent(this, UpdateUser.class);
+        updateUser.putExtra("user", currentUser);
+        startActivity(updateUser);
     }
     public void manageAthlete(View view)
     {

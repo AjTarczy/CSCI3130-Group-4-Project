@@ -73,14 +73,14 @@ public class MainActivity extends AppCompatActivity
 
                                 Coach retrievedUser = data.child("coaches").child(username).getValue(Coach.class);
 
-                                login(retrievedUser);
+                                loginCoach(retrievedUser);
                             }
 
                         } else if (data.child("athletes").child(username).exists()) {
                             if (data.child("athletes").child(username).child("password").getValue().equals(password)) {
                                 Athlete retrievedUser = data.child("athletes").child(username).getValue(Athlete.class);
 
-                                login(retrievedUser);
+                                loginAthlete(retrievedUser);
                             }
 
                         }
@@ -109,16 +109,30 @@ public class MainActivity extends AppCompatActivity
     }
 
     /**
-     * login with the user retrieved from the database
+     * login with the athlete retrieved from the database
+     * takes user to athlete dashboard
      * @param user
      */
-    private void login(User user)
+    private void loginAthlete(User user)
     {
         Intent intent = new Intent(this, Dashboard.class);
         intent.putExtra("user", user);
 
         startActivity(intent);
 
+    }
+
+    /**
+     * login with the coach retrieved from the database
+     * takes user to coach dashboard
+     * @param user
+     */
+    private void loginCoach(User user)
+    {
+        Intent intent = new Intent(this, cmainpage.class);
+        intent.putExtra("user", user);
+
+        startActivity(intent);
 
     }
 
