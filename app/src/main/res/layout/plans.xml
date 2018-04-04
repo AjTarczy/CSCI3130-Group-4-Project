@@ -14,6 +14,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="Create Plan"
+        android:onClick="createPlan"
         app:layout_constraintHorizontal_bias="0.408"
         app:layout_constraintLeft_toLeftOf="parent"
 

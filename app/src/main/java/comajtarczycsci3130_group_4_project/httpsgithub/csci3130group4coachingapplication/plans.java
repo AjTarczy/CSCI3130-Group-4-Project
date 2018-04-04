@@ -15,6 +15,7 @@ public class plans extends AppCompatActivity {
 
     MyApplicationData appState;
     private ListView ActivityListView;
+    private User selectedUser;
     private FirebaseListAdapter<User> firebaseAdapter;
 
 
@@ -26,6 +27,8 @@ public class plans extends AppCompatActivity {
         appState.database = FirebaseDatabase.getInstance();
         appState.userRef = appState.database.getReference("users");
 
+        selectedUser=new User();
+        //selectedUser = (User)getIntent().getSerializableExtra("user");
         FirebaseListOptions<User> options = new FirebaseListOptions.Builder<User>()
                 .setQuery(appState.userRef, User.class)
                 .setLayout(android.R.layout.simple_list_item_1)
@@ -57,9 +60,19 @@ public class plans extends AppCompatActivity {
         /**
          * method to go to detail view
          */
-        //Intent intent = new Intent(this, DetailViewActivity.class);
-        //intent.putExtra("Activity", act);
-        //startActivity(intent);
+        Intent intent = new Intent(this, CreatePlan.class);
+        //change this to send the activity later
+        intent.putExtra("user", act);
+        startActivity(intent);
+    }
+    public void createPlan(View view)
+    {
+        /**
+         * method to go to Create Plan view
+         */
+        Intent intent = new Intent(this, CreatePlan.class);
+        //intent.putExtra("user", selectedUser);
+        startActivity(intent);
     }
 
 }

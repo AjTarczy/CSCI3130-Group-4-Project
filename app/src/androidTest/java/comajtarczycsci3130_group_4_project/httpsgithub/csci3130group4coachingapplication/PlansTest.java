@@ -7,12 +7,14 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.intent.Intents.intended;
 import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static junit.framework.Assert.assertNotNull;
+import static org.hamcrest.CoreMatchers.anything;
 
 /**
  * Created by Jessi on 2018-03-30.
@@ -31,20 +33,8 @@ public class PlansTest {
 
     @Test
     public void clickPlanTest(){
-
-        final ListView list = (ListView) mActivity.findViewById(R.id.planList);
-        assertNotNull ("The list was not loaded", list);
-        getInstrumentation().runOnMainSync(new Runnable() {
-            @Override
-            public void run() {
-
-                list.performItemClick(list.getAdapter().getView(position, null, null),
-                        position, list.getAdapter().getItemId(position));
-            }
-
-        });
-
-        getInstrumentation().waitForIdleSync();
+        onData(anything()).inAdapterView(withId(R.id.planList)).atPosition(0).perform(click());
+        intended(hasComponent(CreatePlan.class.getName()));
     }
 }
 
