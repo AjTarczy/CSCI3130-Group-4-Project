@@ -30,6 +30,7 @@
             android:label="@string/title_activity_registration" />
         <activity android:name=".editProfile" android:exported="true"/>
         <activity android:name=".plans" />
+        <activity android:name=".CreatePlan" />
         <activity android:name=".Statistics" />
         <activity android:name=".ListOfAthletes" android:exported="true"/>
         <activity android:name=".manageAthlete" android:exported="true"/>

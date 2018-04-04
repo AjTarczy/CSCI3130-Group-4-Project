@@ -14,6 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class plans extends AppCompatActivity {
 
     MyApplicationData appState;
+    private User selectedUser;
     private ListView planListView;
     private FirebaseListAdapter<Activity> firebaseAdapter;
 
@@ -22,7 +23,7 @@ public class plans extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.plans);
 
-        User selectedUser = (User)getIntent().getSerializableExtra("user");
+        selectedUser = (User)getIntent().getSerializableExtra("user");
 
         //Get the app wide shared variables
         appState = (MyApplicationData) getApplication();
@@ -48,5 +49,12 @@ public class plans extends AppCompatActivity {
                 //TODO: Do something with the plan
             }
         });
+    }
+
+    public void createPlanButton(View v)
+    {
+        Intent intent = new Intent(this, CreatePlan.class);
+        intent.putExtra("user", selectedUser);
+        startActivity(intent);
     }
 }

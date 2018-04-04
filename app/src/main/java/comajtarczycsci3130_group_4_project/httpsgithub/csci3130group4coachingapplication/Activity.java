@@ -7,7 +7,6 @@ package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingap
 
 public class Activity
 {
-    private int ID;
     private boolean completed;
     private String description;
     private String date;
@@ -22,26 +21,15 @@ public class Activity
 
     /**
      * constructor
-     * @param ID
      * @param completed
      * @param description
      * @param date
      */
-    public Activity(int ID, boolean completed, String description, String date)
+    public Activity(boolean completed, String description, String date)
     {
-        this.ID = ID;
         this.completed = completed;
         this.description = description;
         this.date = date;
-    }
-
-    /**
-     * sets activity ID
-     * @param ID
-     */
-    public void setID(int ID)
-    {
-        this.ID = ID;
     }
 
     /**
@@ -96,15 +84,6 @@ public class Activity
     public String getDate()
     {
         return date;
-    }
-
-    /**
-     * returns the activity ID
-     * @return activity ID int
-     */
-    public int getID()
-    {
-        return ID;
     }
 
 
