@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CSCI3130-Group-4-Project.iml" filepath="$PROJECT_DIR$/CSCI3130-Group-4-Project.iml" />
-      <module fileurl="file://C:\Users\Gashin\AndroidStudioProjects\CSCI3130-Group-4-Project\GroupProject.iml" filepath="C:\Users\Gashin\AndroidStudioProjects\CSCI3130-Group-4-Project\GroupProject.iml" />
       <module fileurl="file://E:\CSCI3130-Group-4-Project\GroupProject.iml" filepath="E:\CSCI3130-Group-4-Project\GroupProject.iml" />
+      <module fileurl="file://C:\Users\Gashin\AndroidStudioProjects\CSCI3130-Group-4-Project\GroupProject.iml" filepath="C:\Users\Gashin\AndroidStudioProjects\CSCI3130-Group-4-Project\GroupProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
