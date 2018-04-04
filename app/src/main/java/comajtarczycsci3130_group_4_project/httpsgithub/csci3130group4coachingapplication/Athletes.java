@@ -6,8 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+
+//legacy class?
 public class Athletes extends AppCompatActivity {
 
+
+    /*
     String[] names={"jhvcd","jchvdcjh","jhcd","chvdshcj","jcvds"};
     TextView[] textView = new  TextView[5];
     int[] ids = {R.id.textView2, R.id.textView8, R.id.textView9,R.id.textView10,R.id.textView11};
@@ -34,5 +38,5 @@ public class Athletes extends AppCompatActivity {
         startActivity(showStatistics);
     }
 
-
+*/
 }

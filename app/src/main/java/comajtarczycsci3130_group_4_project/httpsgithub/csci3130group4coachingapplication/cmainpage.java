@@ -56,6 +56,7 @@ public class cmainpage extends AppCompatActivity
     public void listOfAthlete(View view)
     {
         Intent showListOfAthlete = new Intent(this, ListOfAthletes.class);
+        showListOfAthlete.putExtra("user", currentUser);
         startActivity(showListOfAthlete);
     }
 }
