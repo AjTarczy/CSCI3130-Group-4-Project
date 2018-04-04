@@ -57,6 +57,14 @@ public class plans extends AppCompatActivity {
         /**
          * method to go to detail view
          */
+        //TODO: go to detail plan view
+        //Intent intent = new Intent(this, DetailViewActivity.class);
+        //intent.putExtra("Activity", act);
+        //startActivity(intent);
+    }
+
+    public void createPlanView(){
+        //TODO: go to create plan view
         //Intent intent = new Intent(this, DetailViewActivity.class);
         //intent.putExtra("Activity", act);
         //startActivity(intent);

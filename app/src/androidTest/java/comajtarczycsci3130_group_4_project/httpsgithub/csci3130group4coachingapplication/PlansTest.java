@@ -23,7 +23,7 @@ public class PlansTest {
     @Rule
     public IntentsTestRule<plans> intentsTestRule = new IntentsTestRule<>(plans.class);
 
-    @Test
+   @Test
     public void createPlanTest() {
         onView(withId(R.id.create)).perform(click());
         intended(hasComponent(CreatePlan.class.getName()));
@@ -32,14 +32,17 @@ public class PlansTest {
     @Test
     public void clickPlanTest(){
 
-        final ListView list = (ListView) mActivity.findViewById(R.id.planList);
+        final ListView list = (ListView) intentsTestRule.getActivity().findViewById(R.id.planList);
         assertNotNull ("The list was not loaded", list);
+        final int listLength = list.getChildCount();
         getInstrumentation().runOnMainSync(new Runnable() {
             @Override
             public void run() {
-
-                list.performItemClick(list.getAdapter().getView(position, null, null),
-                        position, list.getAdapter().getItemId(position));
+                for(int i = 0;i<listLength;i++) {
+                    list.performItemClick(list.getAdapter().getView(i, null, null),
+                            i, list.getAdapter().getItemId(i));
+                    intended(hasComponent(PlanView.class.getName()));
+                }
             }
 
         });
