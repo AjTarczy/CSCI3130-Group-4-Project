@@ -68,7 +68,7 @@ public class manageAthlete extends AppCompatActivity
         if(requests.get(i)!=null)
         {
             sample.IgnoreRequest(requests.get(i));
-            appState.firebaseReference.child(sample.username).child("Requests").setValue(sample.getRequests());
+            appState.userRef.child(sample.username).child("Requests").setValue(sample.getRequests());
 
         }
     }
@@ -90,8 +90,8 @@ public class manageAthlete extends AppCompatActivity
         }
         if(requests.get(i)!=null){
             sample.AcceptRequest(requests.get(i));
-            appState.firebaseReference.child(sample.username).child("Requests").setValue(sample.getRequests());
-            appState.firebaseReference.child(sample.username).child("athletes").setValue(sample.getAthletes());
+            appState.userRef.child(sample.username).child("Requests").setValue(sample.getRequests());
+            appState.userRef.child(sample.username).child("athletes").setValue(sample.getAthletes());
         }
     }
     public void delete(View view)
@@ -118,7 +118,7 @@ public class manageAthlete extends AppCompatActivity
         if(athletes.get(i)!=null)
         {
             sample.removeAthlete(athletes.get(i));
-            appState.firebaseReference.child(sample.username).child("athletes").setValue(sample.getAthletes());
+            appState.userRef.child(sample.username).child("athletes").setValue(sample.getAthletes());
         }
     }
 }

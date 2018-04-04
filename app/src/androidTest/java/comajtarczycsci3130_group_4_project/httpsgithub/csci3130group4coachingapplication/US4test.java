@@ -50,7 +50,7 @@ public class US4test {
     @Test
     public void Button4_IsWorking() {
         onView(withId(R.id.button4)).perform(click());
-        intended(hasComponent(Statistics.class.getName()));
+        intended(hasComponent(StatisticsPage.class.getName()));
     }
 
 

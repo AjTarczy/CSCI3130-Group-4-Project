@@ -15,7 +15,6 @@ public class manageCoach extends AppCompatActivity
     private ArrayList<Coach> requests=sample.getRequests();
     private ArrayList<Coach> coaches=sample.getCoaches();
     private MyApplicationData appState;
-    MyApplicationData appState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -71,7 +70,7 @@ public class manageCoach extends AppCompatActivity
         if(requests.get(i)!=null)
         {
             sample.IgnoreRequest(requests.get(i));
-            appState.firebaseReference.child(sample.username).child("Requests").setValue(sample.getRequests());
+            appState.userRef.child(sample.username).child("Requests").setValue(sample.getRequests());
 
         }
     }
@@ -94,11 +93,11 @@ public class manageCoach extends AppCompatActivity
         if(requests.get(i)!=null)
         {
             sample.AcceptRequest(requests.get(i));
-            appState.firebaseReference.child(sample.username).child("Requests").setValue(sample.getRequests());
-            appState.firebaseReference.child(sample.username).child("coaches").setValue(sample.getCoaches());
+            appState.userRef.child(sample.username).child("Requests").setValue(sample.getRequests());
+            appState.userRef.child(sample.username).child("coaches").setValue(sample.getCoaches());
             sampleCoach = requests.get(i);
             sampleCoach.addAthlete(sample);
-            appState.firebaseReference.child(sampleCoach.username).child("athletes").setValue(sampleCoach.getAthletes());
+            appState.userRef.child(sampleCoach.username).child("athletes").setValue(sampleCoach.getAthletes());
         }
     }
     public void delete(View view)
@@ -125,10 +124,10 @@ public class manageCoach extends AppCompatActivity
         if(coaches.get(i)!=null)
         {
             sample.removeCoach(coaches.get(i).getUsername());
-            appState.firebaseReference.child(sample.username).child("coaches").setValue(sample.getCoaches());
+            appState.userRef.child(sample.username).child("coaches").setValue(sample.getCoaches());
             sampleCoach = requests.get(i);
             sampleCoach.removeAthlete(sample);
-            appState.firebaseReference.child(sampleCoach.username).child("athletes").setValue(sampleCoach.getAthletes());
+            appState.userRef.child(sampleCoach.username).child("athletes").setValue(sampleCoach.getAthletes());
         }
         appState = (MyApplicationData)getApplicationContext();
     }

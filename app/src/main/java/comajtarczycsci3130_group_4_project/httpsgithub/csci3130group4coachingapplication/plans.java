@@ -26,12 +26,12 @@ public class plans extends AppCompatActivity {
         appState.database = FirebaseDatabase.getInstance();
         appState.userRef = appState.database.getReference("users");
 
-        FirebaseListOptions<User> options=new FirebaseListOptions.Builder<User>()
+        FirebaseListOptions<User> options = new FirebaseListOptions.Builder<User>()
                 .setQuery(appState.userRef, User.class)
                 .setLayout(android.R.layout.simple_list_item_1)
                 .setLifecycleOwner(this)
                 .build();
-        ActivityListView = (ListView) findViewById(R.id.listView);
+        ActivityListView = (ListView) findViewById(R.id.planList);
 
         //Set up the List View
         firebaseAdapter = new FirebaseListAdapter<User>(options) {
