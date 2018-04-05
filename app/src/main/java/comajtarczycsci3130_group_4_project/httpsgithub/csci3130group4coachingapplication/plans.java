@@ -46,7 +46,7 @@ public class plans extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Activity plan = (Activity) firebaseAdapter.getItem(position);
-                //TODO: Do something with the plan
+                editPlan(plan);
             }
         });
     }
@@ -54,6 +54,13 @@ public class plans extends AppCompatActivity {
     public void createPlanButton(View v)
     {
         Intent intent = new Intent(this, CreatePlan.class);
+        intent.putExtra("user", selectedUser);
+        startActivity(intent);
+    }
+
+    private void editPlan(Activity plan) {
+        Intent intent = new Intent(this, EditPlan.class);
+        intent.putExtra("plan", plan);
         intent.putExtra("user", selectedUser);
         startActivity(intent);
     }

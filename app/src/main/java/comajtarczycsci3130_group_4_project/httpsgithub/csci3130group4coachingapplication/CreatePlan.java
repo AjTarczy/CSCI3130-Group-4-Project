@@ -37,7 +37,7 @@ public class CreatePlan extends AppCompatActivity {
         String date = dateField.getText().toString();
         String description = descriptionField.getText().toString();
         boolean completed = completedField.isChecked();
-        comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication.Activity plan = new comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication.Activity(completed, description, date);
+        comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication.Activity plan = new comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication.Activity( planID, completed, description, date);
 
         appState.database.getReference().child("Plans").child(selectedUser.getUsername()).child(planID).setValue(plan);
 

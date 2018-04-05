@@ -1,15 +1,18 @@
 package comajtarczycsci3130_group_4_project.httpsgithub.csci3130group4coachingapplication;
 
+import java.io.Serializable;
+
 /**
  * Created by robertnickerson on 2018-03-02.
  * Class to hold data about activities assigned to Athletes
  */
 
-public class Activity
+public class Activity implements Serializable
 {
     private boolean completed;
     private String description;
     private String date;
+    private String id;
 
     /**
      * empty constructor
@@ -21,12 +24,14 @@ public class Activity
 
     /**
      * constructor
+     * @param id
      * @param completed
      * @param description
      * @param date
      */
-    public Activity(boolean completed, String description, String date)
+    public Activity(String id, boolean completed, String description, String date)
     {
+        this.id = id;
         this.completed = completed;
         this.description = description;
         this.date = date;
@@ -85,6 +90,12 @@ public class Activity
     {
         return date;
     }
+
+    /**
+     * returns the activity id
+     * @return activity id String
+     */
+    public String getId() { return id; }
 
 
 }

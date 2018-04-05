@@ -31,6 +31,7 @@
         <activity android:name=".editProfile" android:exported="true"/>
         <activity android:name=".plans" />
         <activity android:name=".CreatePlan" />
+        <activity android:name=".EditPlan" />
         <activity android:name=".Statistics" />
         <activity android:name=".ListOfAthletes" android:exported="true"/>
         <activity android:name=".manageAthlete" android:exported="true"/>
