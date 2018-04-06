@@ -10,8 +10,7 @@ import java.util.ArrayList;
 public class Athlete extends User
 {
     private ArrayList<Activity> activities = new ArrayList<Activity>();
-    private ArrayList<Coach> coaches = new ArrayList<Coach>();
-    private ArrayList<Coach> Requests;
+    private ArrayList<String> coaches = new ArrayList<String>();
 
     public Athlete()
     {
@@ -21,6 +20,7 @@ public class Athlete extends User
     public Athlete(String username, String email, String password, String firstName, String lastName, String dob, double height, double weight, String gender, String role)
     {
         super(username, email, password, firstName, lastName, dob, height, weight, gender, role);
+        this.coaches.add("not empty");
     }
 
 
@@ -44,45 +44,12 @@ public class Athlete extends User
     }
 
 
-    /**
-     * return this athelete list of requests
-     * @return
-     */
-
-    public ArrayList<Coach> getRequests()
-    {
-        return Requests;
-    }
-
-
-    public void IgnoreRequest(Coach coach)
-    {
-        for (int i = 0; i < Requests.size(); i++)
-        {
-            if (coach.getUsername().equals(Requests.get(i).getUsername()))
-            {
-                Requests.remove(i);
-            }
-        }
-    }
-
-    public void AcceptRequest(Coach coach)
-    {
-        for (int i = 0; i < Requests.size(); i++)
-        {
-            if (coach.getUsername().equals(Requests.get(i).getUsername()))
-            {
-                coaches.add(coach);
-                Requests.remove(i);
-            }
-        }
-    }
 
     /**
      * add a coach to the athlete's current list of coaches
      * @param coach
      */
-    public void addCoach(Coach coach)
+    public void addCoach(String coach)
     {
         coaches.add(coach);
     }
@@ -91,7 +58,7 @@ public class Athlete extends User
      * return the athlete's current list of coaches
      * @return
      */
-    public ArrayList<Coach> getCoaches()
+    public ArrayList<String> getCoaches()
     {
         return coaches;
     }
@@ -105,7 +72,7 @@ public class Athlete extends User
 
         for (int i = 0; i < coaches.size(); i++)
         {
-            if (username.equals(coaches.get(i).getUsername()))
+            if (username.equals(coaches.get(i)))
             {
                 coaches.remove(i);
             }

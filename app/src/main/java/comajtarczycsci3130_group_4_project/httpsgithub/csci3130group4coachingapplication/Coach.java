@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class Coach extends User
 {
-    private ArrayList<String> athletes;
-    private ArrayList<String> Requests;
+    private ArrayList<String> athletes=new ArrayList<String>();;
+    private ArrayList<String> Requests=new ArrayList<String>();;
 
 
     public Coach()
