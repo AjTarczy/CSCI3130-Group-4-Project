@@ -11,6 +11,10 @@ import android.widget.TextView;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.database.FirebaseDatabase;
 
+/**
+ * shows a list of the athletes associated with the current coach
+ * selecting an athlete launches the plan view for that athlete
+ */
 public class ListOfAthletes extends AppCompatActivity {
 
     MyApplicationData appState;
@@ -30,6 +34,8 @@ public class ListOfAthletes extends AppCompatActivity {
         //Get the reference to the UI contents
         athleteListView = (ListView) findViewById(R.id.coachPlanView);
 
+
+
         //Set up the List View
         firebaseAdapter = new FirebaseListAdapter<Athlete>(this, Athlete.class,
                 android.R.layout.simple_list_item_1, appState.database.getReference().child("AthleteList").child(selectedUser.getUsername())) {
@@ -41,12 +47,27 @@ public class ListOfAthletes extends AppCompatActivity {
         };
         athleteListView.setAdapter(firebaseAdapter);
         athleteListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            // onItemClick method is called everytime a user clicks an item on the list
+            // onItemClick method is called every time a user clicks an item on the list
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Athlete athlete = (Athlete) firebaseAdapter.getItem(position);
-                //TODO: Do something with the plan
+
+                showAthletePlans(athlete);
+
+
             }
         });
+
+    }
+
+    /**
+     * launches the plan view activity for the selected athlete
+     * @param athlete
+     */
+    private void showAthletePlans(Athlete athlete)
+    {
+        Intent intent = new Intent(this, plans.class);
+        intent.putExtra("user", athlete);
+        startActivity(intent);
     }
 }
