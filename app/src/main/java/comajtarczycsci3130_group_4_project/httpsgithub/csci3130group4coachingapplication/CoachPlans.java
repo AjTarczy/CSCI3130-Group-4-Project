@@ -11,27 +11,27 @@ import android.widget.TextView;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class plans extends AppCompatActivity {
+public class CoachPlans extends AppCompatActivity {
 
     MyApplicationData appState;
-    private User selectedUser;
     private ListView planListView;
     private FirebaseListAdapter<Activity> firebaseAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.plans);
+        setContentView(R.layout.coach_plans);
 
-        selectedUser = (User)getIntent().getSerializableExtra("user");
+        Coach selectedUser = (Coach)getIntent().getSerializableExtra("user");
 
         //Get the app wide shared variables
         appState = (MyApplicationData) getApplication();
 
         //Get the reference to the UI contents
-        planListView = (ListView) findViewById(R.id.planView);
+        planListView = (ListView) findViewById(R.id.coachPlanView);
 
         //Set up the List View
+        //need to update functionality once firebase has a list of athletes associated with this coach
         firebaseAdapter = new FirebaseListAdapter<Activity>(this, Activity.class,
                 android.R.layout.simple_list_item_1, appState.database.getReference().child("Plans").child(selectedUser.getUsername())) {
             @Override
@@ -46,22 +46,8 @@ public class plans extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Activity plan = (Activity) firebaseAdapter.getItem(position);
-                editPlan(plan);
+                //TODO: Do something with the plan
             }
         });
-    }
-
-    public void createPlanButton(View v)
-    {
-        Intent intent = new Intent(this, CreatePlan.class);
-        intent.putExtra("user", selectedUser);
-        startActivity(intent);
-    }
-
-    private void editPlan(Activity plan) {
-        Intent intent = new Intent(this, EditPlan.class);
-        intent.putExtra("plan", plan);
-        intent.putExtra("user", selectedUser);
-        startActivity(intent);
     }
 }

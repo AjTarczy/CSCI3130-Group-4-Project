@@ -23,6 +23,8 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 
+
+//update for new version of ListOfAthletes
 public class US20test {
 
 
