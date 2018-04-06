@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class Coach extends User
 {
-    private ArrayList<Athlete> athletes;
-    private ArrayList<Athlete> Requests;
+    private ArrayList<String> athletes;
+    private ArrayList<String> Requests;
 
 
     public Coach()
@@ -20,6 +20,8 @@ public class Coach extends User
     public Coach(String username, String email, String password, String firstName, String lastName, String dob, double height, double weight, String gender, String role)
     {
         super(username, email, password, firstName, lastName, dob, height, weight, gender, role);
+        this.athletes.add("not emty");
+        this.Requests.add("not emty");
 
     }
 
@@ -27,7 +29,7 @@ public class Coach extends User
      * return this coaches list of athletes
      * @return
      */
-    public ArrayList<Athlete> getAthletes()
+    public ArrayList<String> getAthletes()
     {
         return athletes;
     }
@@ -37,7 +39,7 @@ public class Coach extends User
      * @return
      */
 
-    public ArrayList<Athlete> getRequests()
+    public ArrayList<String> getRequests()
     {
         return Requests;
     }
@@ -46,7 +48,7 @@ public class Coach extends User
      * add an athlete to this coach's list of athletes
      * @param athlete
      */
-    public void addAthlete(Athlete athlete)
+    public void addAthlete(String athlete)
     {
         athletes.add(athlete);
     }
@@ -56,34 +58,34 @@ public class Coach extends User
      * @param athlete
      */
 
-    public void removeAthlete(Athlete athlete)
+    public void removeAthlete(String athlete)
     {
         for (int i = 0; i < athletes.size(); i++)
         {
-            if (athlete.getUsername().equals(athletes.get(i).getUsername()))
+
+            if (athlete.equals(athletes.get(i)))
             {
                 athletes.remove(i);
             }
         }
     }
 
-    public void IgnoreRequest(Athlete athlete)
+    public void IgnoreRequest(String athlete)
     {
         for (int i = 0; i < Requests.size(); i++)
         {
-            if (athlete.getUsername().equals(Requests.get(i).getUsername()))
+            if (athlete.equals(Requests.get(i)))
             {
-                athletes.add(athlete);
                 Requests.remove(i);
             }
         }
     }
 
-    public void AcceptRequest(Athlete athlete)
+    public void AcceptRequest(String athlete)
     {
         for (int i = 0; i < Requests.size(); i++)
         {
-            if (athlete.getUsername().equals(Requests.get(i).getUsername()))
+            if (athlete.equals(Requests.get(i)))
             {
                 athletes.add(athlete);
                 Requests.remove(i);
