@@ -38,6 +38,15 @@ public class Activity implements Serializable
     }
 
     /**
+     * sets the activity id
+     * @param id
+     */
+    public void setId(String id)
+    {
+        this.id = id;
+    }
+
+    /**
      * sets whether an activity has been completed
      * @param completed
      */

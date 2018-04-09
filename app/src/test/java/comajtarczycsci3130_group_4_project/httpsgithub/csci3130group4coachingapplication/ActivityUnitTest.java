@@ -13,17 +13,17 @@ public class ActivityUnitTest {
     Activity testActivity = new Activity();
 
     String testString;
-    int testInt;
+    String testId;
     boolean testBoolean;
 
     @Test
     public void setGetIDAreCorrect()
     {
-        testInt = 1;
+        testId = "1234";
 
-        testActivity.setID(testInt);
+        testActivity.setId(testId);
 
-        assertEquals(testInt, testActivity.getID());
+        assertEquals(testId, testActivity.getId());
     }
 
     @Test

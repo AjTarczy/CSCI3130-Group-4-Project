@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class Coach extends User
 {
-    private ArrayList<Athlete> athletes;
-    private ArrayList<Athlete> Requests;
+    private ArrayList<Athlete> athletes = new ArrayList<Athlete>();
+    private ArrayList<Athlete> Requests = new ArrayList<Athlete>();
 
 
     public Coach()
@@ -20,7 +20,6 @@ public class Coach extends User
     public Coach(String username, String email, String password, String firstName, String lastName, String dob, double height, double weight, String gender, String role)
     {
         super(username, email, password, firstName, lastName, dob, height, weight, gender, role);
-
     }
 
     /**

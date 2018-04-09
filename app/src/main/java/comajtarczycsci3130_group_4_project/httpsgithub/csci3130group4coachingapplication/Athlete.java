@@ -113,21 +113,6 @@ public class Athlete extends User
 
     }
 
-    /**
-     * remove an activity with a given ID from the athlete's list of activities
-     * @param ID
-     */
-    //public void removeActivity(int ID)
-    //{
-    //    for (int i = 0; i < activities.size(); i++)
-    //    {
-    //        if (ID == activities.get(i).getID())
-    //        {
-    //            activities.remove(i);
-    //        }
-    //    }
-    //
-    //}
 
 
 

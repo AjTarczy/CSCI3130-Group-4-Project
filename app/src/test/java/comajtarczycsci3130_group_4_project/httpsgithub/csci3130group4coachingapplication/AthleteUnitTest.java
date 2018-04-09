@@ -13,7 +13,7 @@ public class AthleteUnitTest {
     Athlete testAthlete = new Athlete();
     Activity testActivity = new Activity();
     Coach testCoach = new Coach();
-    int testInt;
+    String testString;
 
     @Test
     public void addGetActivityAreCorrect()
@@ -42,14 +42,4 @@ public class AthleteUnitTest {
         assertFalse(testAthlete.getCoaches().contains(testCoach));
     }
 
-    @Test
-    public void removeActivityIsCorrect()
-    {
-        testInt = 1;
-        testActivity.setID(testInt);
-        testAthlete.addActivity(testActivity);
-        testAthlete.removeActivity(testInt);
-
-        assertFalse(testAthlete.getActivities().contains(testActivity));
-    }
 }
